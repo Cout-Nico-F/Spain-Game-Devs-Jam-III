@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Nueva receta")]
+[CreateAssetMenu(menuName = "New recipe", order = 1)]
 public class Recipe : ScriptableObject
 {
     public string id;
-    public List<Ingrediente> ingredientes;
+    public List<Ingredient> ingredients;
 }

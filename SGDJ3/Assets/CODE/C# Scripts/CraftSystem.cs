@@ -5,11 +5,11 @@ public class CraftSystem : MonoBehaviour
     [SerializeField] private Recipe[] recipes;
     
     
-    public Recipe MixIngredients(Ingrediente ingrediente1, Ingrediente ingrediente2)
+    public Recipe MixIngredients(Ingredient ingredient1, Ingredient ingredient2)
     {
         foreach (var recipe in recipes)
         {
-            if (recipe.ingredientes.Contains(ingrediente1) && recipe.ingredientes.Contains(ingrediente2))
+            if (recipe.ingredients.Contains(ingredient1) && recipe.ingredients.Contains(ingredient2))
             {
                 return recipe;
             }

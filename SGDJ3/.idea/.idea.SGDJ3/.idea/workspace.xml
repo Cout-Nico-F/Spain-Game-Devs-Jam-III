@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb1fc8ca-5238-4e5f-9e64-c2b8d8aa5abd" name="Changes" comment="" />
+    <list default="true" id="bb1fc8ca-5238-4e5f-9e64-c2b8d8aa5abd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SGDJ3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SGDJ3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CODE/C# Scripts/Ingrediente.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CODE/C# Scripts/Ingrediente.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CODE/C# Scripts/Recipe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CODE/C# Scripts/Recipe.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +29,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -54,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1632344635318</updated>
-      <workItem from="1632344651546" duration="756000" />
+      <workItem from="1632344651546" duration="1331000" />
     </task>
     <servers />
   </component>
