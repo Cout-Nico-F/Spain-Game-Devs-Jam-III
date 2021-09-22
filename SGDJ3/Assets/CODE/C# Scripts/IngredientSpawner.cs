@@ -51,7 +51,7 @@ public class IngredientSpawner : MonoBehaviour
 
         if(ingredientPool.Count == 0)
         {
-            ingredientPool = ingredients;
+            ingredientPool = new List<Ingredient>(ingredients);
         }
 
         return chosenOne;
