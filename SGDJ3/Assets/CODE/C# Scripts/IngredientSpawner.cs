@@ -6,6 +6,8 @@ public class IngredientSpawner : MonoBehaviour
 {
 
     [SerializeField]
+    private RectTransform boundsRect;
+    [SerializeField]
     private List<Ingredient> ingredients;
     
     private float spawnDelayInSeconds = 1;
@@ -59,11 +61,13 @@ public class IngredientSpawner : MonoBehaviour
 
     private Vector3 ChoosePosition()
     {
-        //find a random X and Y values
-        int randomX = 0;
-        int randomY = 0;
-        int Zpos = 0;
-        Vector3 vec = new Vector3(randomX, randomY,Zpos);
-        return vec;
+        return new Vector3(Random.Range(boundsRect.rect.xMin, boundsRect.rect.xMax), Random.Range(boundsRect.rect.yMin, boundsRect.rect.yMax), 0);
+
+        ////find a random X and Y values
+        //int randomX = Random.Range(boundsRect.rect.xMin, boundsRect.rect.
+        //int randomY = 0;
+        //int Zpos = 0;
+        //Vector3 vec = new Vector3(randomX, randomY,Zpos);
+        //return vec;
     }
 }
