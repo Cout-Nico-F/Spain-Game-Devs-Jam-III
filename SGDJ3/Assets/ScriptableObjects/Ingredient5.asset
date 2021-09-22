@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96816862a0d10654589aec520312eb20, type: 3}
   m_Name: Ingredient5
   m_EditorClassIdentifier: 
-  id: 
-  prefab: {fileID: 0}
+  id: Ingredient5
+  prefab: {fileID: 3990647280322756584, guid: 261ce10bc00748545aab63d6d24f0505, type: 3}

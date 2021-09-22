@@ -39,7 +39,7 @@ public class IngredientSpawner : MonoBehaviour
     {
         //TODO: restricciones de spawn (ejemplo no spawn donde ya hay otro ingrediente )
         //spawnear
-        Instantiate(ChooseIngredient(), ChoosePosition(), Quaternion.identity) ;
+        Instantiate(ChooseIngredient().prefab, ChoosePosition(), Quaternion.identity) ;
         //resetear timer de cooldown
         timeRemaining = spawnDelayInSeconds;
     }
@@ -47,7 +47,7 @@ public class IngredientSpawner : MonoBehaviour
     private Ingredient ChooseIngredient()
     {
         int chosenOneIndex = Random.Range(0, ingredientPool.Count);
-        Ingredient chosenOne = ingredientPool[chosenOneIndex];
+        var chosenOne = ingredientPool[chosenOneIndex];
 
         ingredientPool.RemoveAt(chosenOneIndex);
 
