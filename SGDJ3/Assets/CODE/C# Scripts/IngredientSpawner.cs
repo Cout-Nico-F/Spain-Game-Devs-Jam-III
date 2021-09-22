@@ -10,7 +10,7 @@ public class IngredientSpawner : MonoBehaviour
     [SerializeField]
     private List<Ingredient> ingredients;
     
-    private float spawnDelayInSeconds = 1;
+    private float spawnDelayInSeconds = .1f;
     private List<Ingredient> ingredientPool;
     private float timeRemaining;
 
