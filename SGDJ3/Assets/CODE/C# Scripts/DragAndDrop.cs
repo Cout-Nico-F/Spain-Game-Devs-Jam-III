@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
@@ -8,20 +5,23 @@ public class DragAndDrop : MonoBehaviour
     private Transform myTransform;
     private Camera cam;
     private Vector3 offset;
-    private Ingredient secondIngredient;
-    private Rigidbody2D rb;
+    private string myIngredient;
+    private string secondIngredient;
+    private Renderer renderer;
     
     private void Awake()
     {
         myTransform = transform;
+        myIngredient = GetComponent<Ingredient>().id;
         cam = Camera.main;
-        rb = GetComponent<Rigidbody2D>();
+        renderer = GetComponent<Renderer>();
     }
 
     private void OnMouseDown()
     {
         var mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
         offset = myTransform.position - mousePosition;
+        renderer.sortingOrder = 100;
     }
 
     private void OnMouseDrag()
@@ -32,14 +32,25 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
-        
+        if (secondIngredient != null)
+        {
+            var recipe = CraftSystem.Instance.MixIngredients(myIngredient, secondIngredient);
+            if (recipe != null)
+            {
+                Instantiate(recipe, Vector3.zero, Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("Receta sin efecto");
+            }
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Ingredient"))
         {
-            Debug.Log(other.gameObject.name);
+            secondIngredient = other.GetComponent<Ingredient>().id;
         }
     }
 }

@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "New ingredient", order = 1)]
-public class Ingredient : ScriptableObject
+public class Ingredient : MonoBehaviour
 {
     public string id;
-    public GameObject prefab;
+    
 }

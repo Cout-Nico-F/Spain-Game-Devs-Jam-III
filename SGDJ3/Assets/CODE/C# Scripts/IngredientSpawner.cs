@@ -42,7 +42,7 @@ public class IngredientSpawner : MonoBehaviour
     {
         //TODO: restricciones de spawn (ejemplo no spawn donde ya hay otro ingrediente )
         //spawnear
-        Instantiate(ChooseIngredient().prefab, ChoosePosition(), Quaternion.identity, ingredientSpawnerGroup) ;
+        Instantiate(ChooseIngredient(), ChoosePosition(), Quaternion.identity, ingredientSpawnerGroup) ;
         //resetear timer de cooldown
         timeRemaining = spawnDelayInSeconds;
     }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6315874369338529964}
   - component: {fileID: 844401100258251406}
   - component: {fileID: 1330777789113411104}
+  - component: {fileID: -9062671110190156755}
   m_Layer: 0
   m_Name: PotionRed
   m_TagString: Untagged
@@ -138,7 +139,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 9.816773
+  m_Distance: 1.3321022
   m_DampingRatio: 0
   m_Frequency: 1.5
 --- !u!58 &1330777789113411104
@@ -157,3 +158,19 @@ CircleCollider2D:
   m_Offset: {x: -0.017141342, y: 0.10575318}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-9062671110190156755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408523438998239424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3267a54eb52338b4fafc7adc47434374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: PotionRed
+  ingredients:
+  - estrella
+  - seta

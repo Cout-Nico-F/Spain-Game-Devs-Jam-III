@@ -785,7 +785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipes:
-  - {fileID: 11400000, guid: e02555b4856d0b9409b3fb2ac5d8eb11, type: 2}
+  - {fileID: -9062671110190156755, guid: 13ed192c8846a3a46ad0a685ba874aa1, type: 3}
 --- !u!4 &1180191189
 Transform:
   m_ObjectHideFlags: 0
@@ -1420,24 +1420,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2062186834}
     - target: {fileID: 2759097315404769495, guid: bd4ba0a6815331e4fb32374eb624ee1c, type: 3}
+      propertyPath: ingredients.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2759097315404769495, guid: bd4ba0a6815331e4fb32374eb624ee1c, type: 3}
       propertyPath: ingredients.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 9097987b9375831479159a69ebb7a7b2, type: 2}
+      objectReference: {fileID: 3728783955030389574, guid: 79031283b0b74d44790cad6180e9d16d, type: 3}
     - target: {fileID: 2759097315404769495, guid: bd4ba0a6815331e4fb32374eb624ee1c, type: 3}
       propertyPath: ingredients.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 4c6d3afab1f66f1459b665f31b4e73e1, type: 2}
+      objectReference: {fileID: -7381834923290673010, guid: c11f2bbb3e411494da259db7b024cd86, type: 3}
     - target: {fileID: 2759097315404769495, guid: bd4ba0a6815331e4fb32374eb624ee1c, type: 3}
       propertyPath: ingredients.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 2a4e3b486b297b746abec3c79600a429, type: 2}
+      objectReference: {fileID: 2094551892857707711, guid: 00e7e562c9cb60b49a8e6e2c08a559a0, type: 3}
     - target: {fileID: 2759097315404769495, guid: bd4ba0a6815331e4fb32374eb624ee1c, type: 3}
       propertyPath: ingredients.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 49164f22ff0db944b9a7d9e8d08cfa72, type: 2}
+      objectReference: {fileID: -8191338184627832555, guid: b22fac63d85daa64aadfbbdc2f581fb8, type: 3}
     - target: {fileID: 2759097315404769495, guid: bd4ba0a6815331e4fb32374eb624ee1c, type: 3}
       propertyPath: ingredients.Array.data[4]
       value: 
-      objectReference: {fileID: 11400000, guid: cef72baa018914c4e8784ac877e2b8e7, type: 2}
+      objectReference: {fileID: -1370914205700103537, guid: 261ce10bc00748545aab63d6d24f0505, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd4ba0a6815331e4fb32374eb624ee1c, type: 3}
