@@ -12,6 +12,8 @@ public class IngredientSpawner : MonoBehaviour
     
     [SerializeField]
     private float spawnDelayInSeconds = .1f;
+
+    [SerializeField] private Transform ingredientSpawnerGroup;
     private List<Ingredient> ingredientPool;
     private float timeRemaining;
 
@@ -40,7 +42,7 @@ public class IngredientSpawner : MonoBehaviour
     {
         //TODO: restricciones de spawn (ejemplo no spawn donde ya hay otro ingrediente )
         //spawnear
-        Instantiate(ChooseIngredient().prefab, ChoosePosition(), Quaternion.identity) ;
+        Instantiate(ChooseIngredient().prefab, ChoosePosition(), Quaternion.identity, ingredientSpawnerGroup) ;
         //resetear timer de cooldown
         timeRemaining = spawnDelayInSeconds;
     }
