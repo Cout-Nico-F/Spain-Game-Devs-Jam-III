@@ -2,17 +2,20 @@ using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
 {
+    [SerializeField] private float maxDistanceBetweenIngredients;
+    
     private Transform myTransform;
     private Camera cam;
     private Vector3 offset;
-    private string myIngredient;
-    private string secondIngredient;
+    private Ingredient myIngredient;
+    private Ingredient secondIngredient;
     private Renderer renderer;
+    
     
     private void Awake()
     {
         myTransform = transform;
-        myIngredient = GetComponent<Ingredient>().id;
+        myIngredient = GetComponent<Ingredient>();
         cam = Camera.main;
         renderer = GetComponent<Renderer>();
     }
@@ -34,7 +37,10 @@ public class DragAndDrop : MonoBehaviour
     {
         if (secondIngredient != null)
         {
-            var recipe = CraftSystem.Instance.MixIngredients(myIngredient, secondIngredient);
+            var distance = Vector3.Distance(myTransform.position, secondIngredient.transform.position);
+            if (distance > maxDistanceBetweenIngredients) return;
+            
+            var recipe = CraftSystem.Instance.MixIngredients(myIngredient.id, secondIngredient.id);
             if (recipe != null)
             {
                 Instantiate(recipe, Vector3.zero, Quaternion.identity);
@@ -46,11 +52,11 @@ public class DragAndDrop : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Ingredient"))
         {
-            secondIngredient = other.GetComponent<Ingredient>().id;
+            secondIngredient = other.GetComponent<Ingredient>();
         }
     }
 }
