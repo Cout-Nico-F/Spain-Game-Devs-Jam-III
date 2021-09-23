@@ -10,8 +10,8 @@ public class DragAndDrop : MonoBehaviour
     private Ingredient myIngredient;
     private Ingredient secondIngredient;
     private Renderer _renderer;
-    
-    
+
+
     private void Awake()
     {
         myTransform = transform;
@@ -43,11 +43,11 @@ public class DragAndDrop : MonoBehaviour
             var recipe = CraftSystem.Instance.MixIngredients(myIngredient.id, secondIngredient.id);
             if (recipe != null)
             {
-                Instantiate(recipe, Vector3.zero, Quaternion.identity);
+                CraftSystem.Instance.SpawnPotion(recipe, myIngredient, secondIngredient);
             }
             else
             {
-                Debug.Log("Receta sin efecto");
+                CraftSystem.Instance.WrongMix(myIngredient, secondIngredient);
             }
         }
     }
@@ -59,4 +59,5 @@ public class DragAndDrop : MonoBehaviour
             secondIngredient = other.GetComponent<Ingredient>();
         }
     }
+
 }

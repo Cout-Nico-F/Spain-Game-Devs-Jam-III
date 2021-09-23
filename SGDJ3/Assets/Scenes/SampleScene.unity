@@ -744,6 +744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipes:
   - {fileID: -9062671110190156755, guid: 13ed192c8846a3a46ad0a685ba874aa1, type: 3}
+  potionSpawnPoint: {fileID: 515092248}
 --- !u!4 &1180191189
 Transform:
   m_ObjectHideFlags: 0
@@ -1461,7 +1462,7 @@ PrefabInstance:
       objectReference: {fileID: 1401142369}
     - target: {fileID: 2759097315404769495, guid: bd4ba0a6815331e4fb32374eb624ee1c, type: 3}
       propertyPath: spawnDelayInSeconds
-      value: 0.001
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2759097315404769495, guid: bd4ba0a6815331e4fb32374eb624ee1c, type: 3}
       propertyPath: ingredientSpawnerGroup
