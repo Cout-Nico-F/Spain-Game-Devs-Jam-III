@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-public class CraftSystem : MonoBehaviour
+public class CraftSystem : Singleton<CraftSystem>
 {
     [SerializeField] private Recipe[] recipes;
     
-    
+
     public Recipe MixIngredients(Ingredient ingredient1, Ingredient ingredient2)
     {
         foreach (var recipe in recipes)
