@@ -10,6 +10,7 @@ public class IngredientSpawner : MonoBehaviour
     [SerializeField]
     private List<Ingredient> ingredients;
     
+    [SerializeField]
     private float spawnDelayInSeconds = .1f;
     private List<Ingredient> ingredientPool;
     private float timeRemaining;
@@ -19,7 +20,7 @@ public class IngredientSpawner : MonoBehaviour
     {
         timeRemaining = 3; //initial delay
         //seteo primera vuelta de ingredientes ( aca podemos cambiarlo a antojo para que siempre toque algun ingrediente primero
-        //puede ser util para enseñar la primer pocion a modo de tutorial )
+        //puede ser util para enseï¿½ar la primer pocion a modo de tutorial )
         ingredientPool = new List<Ingredient>(ingredients);
     }
 

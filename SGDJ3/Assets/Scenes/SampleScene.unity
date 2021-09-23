@@ -1367,6 +1367,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2062186834}
     - target: {fileID: 2759097315404769495, guid: bd4ba0a6815331e4fb32374eb624ee1c, type: 3}
+      propertyPath: spawnDelayInSeconds
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2759097315404769495, guid: bd4ba0a6815331e4fb32374eb624ee1c, type: 3}
       propertyPath: ingredients.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 9097987b9375831479159a69ebb7a7b2, type: 2}
