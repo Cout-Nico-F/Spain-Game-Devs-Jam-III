@@ -5,8 +5,7 @@ using UnityEngine;
 public class Potion : MonoBehaviour
 {
     private bool isPressed = false;
-    [SerializeField]
-    private float releaseTime = 0.2f;
+    private float releaseTime;
     [SerializeField]
     private Rigidbody2D rb;
 
@@ -14,6 +13,7 @@ public class Potion : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody2D>();
         this.GetComponent<SpringJoint2D>().connectedBody = GameObject.FindGameObjectWithTag("Knob").GetComponent<Rigidbody2D>();
+        releaseTime = 0.045f;
     }
     private void Update()
     {
