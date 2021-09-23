@@ -9,7 +9,7 @@ public class DragAndDrop : MonoBehaviour
     private Vector3 offset;
     private Ingredient myIngredient;
     private Ingredient secondIngredient;
-    private Renderer renderer;
+    private Renderer _renderer;
     
     
     private void Awake()
@@ -17,14 +17,14 @@ public class DragAndDrop : MonoBehaviour
         myTransform = transform;
         myIngredient = GetComponent<Ingredient>();
         cam = Camera.main;
-        renderer = GetComponent<Renderer>();
+        _renderer = GetComponent<Renderer>();
     }
 
     private void OnMouseDown()
     {
         var mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
         offset = myTransform.position - mousePosition;
-        renderer.sortingOrder = 100;
+        _renderer.sortingOrder = 100;
     }
 
     private void OnMouseDrag()
