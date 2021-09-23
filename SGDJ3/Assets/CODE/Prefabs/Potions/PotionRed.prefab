@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 408523438998239425}
   - component: {fileID: 408523438998239431}
-  - component: {fileID: 408523438998239430}
   - component: {fileID: 408523438998239428}
-  - component: {fileID: 408523438998239429}
-  - component: {fileID: 408523438998239434}
+  - component: {fileID: 6315874369338529964}
+  - component: {fileID: 844401100258251406}
+  - component: {fileID: 1330777789113411104}
   m_Layer: 0
   m_Name: PotionRed
   m_TagString: Untagged
@@ -86,7 +86,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &408523438998239430
+--- !u!114 &408523438998239428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408523438998239424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a4606b5612dd941bae6b1cd36dc8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  releaseTime: 0
+  rb: {fileID: 0}
+--- !u!50 &6315874369338529964
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -101,42 +115,13 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.7
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &408523438998239428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408523438998239424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68a4606b5612dd941bae6b1cd36dc8c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 408523438998239430}
---- !u!58 &408523438998239429
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408523438998239424}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!231 &408523438998239434
+--- !u!231 &844401100258251406
 SpringJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,6 +138,22 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.017556906
+  m_Distance: 9.816773
   m_DampingRatio: 0
-  m_Frequency: 2.3
+  m_Frequency: 1.5
+--- !u!58 &1330777789113411104
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408523438998239424}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017141342, y: 0.10575318}
+  serializedVersion: 2
+  m_Radius: 0.5

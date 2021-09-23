@@ -5,6 +5,7 @@ using UnityEngine;
 public class RedPotion : MonoBehaviour
 {
     private bool isPressed = false;
+    [SerializeField]
     private float releaseTime;
     [SerializeField]
     private Rigidbody2D rb;
