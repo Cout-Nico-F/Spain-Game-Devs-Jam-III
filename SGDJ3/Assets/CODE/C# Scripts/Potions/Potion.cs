@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RedPotion : MonoBehaviour
+public class Potion : MonoBehaviour
 {
     private bool isPressed = false;
     [SerializeField]
@@ -13,7 +13,7 @@ public class RedPotion : MonoBehaviour
     private void Awake()
     {
         rb = this.GetComponent<Rigidbody2D>();
-        //this.GetComponent<SpringJoint2D>().connectedBody = FindConnectedBody();
+        this.GetComponent<SpringJoint2D>().connectedBody = GameObject.FindGameObjectWithTag("Knob").GetComponent<Rigidbody2D>();
     }
     private void Update()
     {

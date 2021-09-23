@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 515092249}
   m_Layer: 0
   m_Name: Knob
-  m_TagString: Untagged
+  m_TagString: Knob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1279,12 +1279,12 @@ PrefabInstance:
       objectReference: {fileID: 515092250}
     - target: {fileID: 844401100258251406, guid: 13ed192c8846a3a46ad0a685ba874aa1, type: 3}
       propertyPath: m_Distance
-      value: 0.005
+      value: 9.823284
       objectReference: {fileID: 0}
     - target: {fileID: 844401100258251406, guid: 13ed192c8846a3a46ad0a685ba874aa1, type: 3}
       propertyPath: m_ConnectedRigidBody
       value: 
-      objectReference: {fileID: 515092250}
+      objectReference: {fileID: 0}
     - target: {fileID: 6315874369338529964, guid: 13ed192c8846a3a46ad0a685ba874aa1, type: 3}
       propertyPath: m_Mass
       value: 1
