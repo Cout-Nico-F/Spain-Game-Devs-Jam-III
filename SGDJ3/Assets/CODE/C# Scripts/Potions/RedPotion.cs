@@ -6,16 +6,26 @@ public class RedPotion : MonoBehaviour
 {
     private bool isPressed = false;
     [SerializeField]
-    private float releaseTime;
+    private float releaseTime = 0.2f;
     [SerializeField]
     private Rigidbody2D rb;
 
+    private void Awake()
+    {
+        rb = this.GetComponent<Rigidbody2D>();
+        //this.GetComponent<SpringJoint2D>().connectedBody = FindConnectedBody();
+    }
     private void Update()
     {
         if (isPressed)
         {
             rb.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
+    }
+
+    private Rigidbody2D FindConnectedBody()
+    {
+        return new Rigidbody2D();
     }
 
     private void OnMouseDown()
