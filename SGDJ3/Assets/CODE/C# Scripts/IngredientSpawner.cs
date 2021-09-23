@@ -70,9 +70,6 @@ public class IngredientSpawner : MonoBehaviour
         //pick a position
         Vector3 pos = new Vector3(Random.Range(boundsRect.rect.xMin, boundsRect.rect.xMax), Random.Range(boundsRect.rect.yMin, boundsRect.rect.yMax), 0);
 
-        
-
-
         while (RectTransformUtility.RectangleContainsScreenPoint(noSpawnRect, pos))
         {
              pos = new Vector3(Random.Range(boundsRect.rect.xMin, boundsRect.rect.xMax), Random.Range(boundsRect.rect.yMin, boundsRect.rect.yMax), 0);
