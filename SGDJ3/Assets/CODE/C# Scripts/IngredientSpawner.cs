@@ -8,6 +8,9 @@ public class IngredientSpawner : MonoBehaviour
     [SerializeField]
     private RectTransform boundsRect;
     [SerializeField]
+    private RectTransform noSpawnRect;
+
+    [SerializeField]
     private List<Ingredient> ingredients;
     
     [SerializeField]
@@ -64,13 +67,17 @@ public class IngredientSpawner : MonoBehaviour
 
     private Vector3 ChoosePosition()
     {
-        return new Vector3(Random.Range(boundsRect.rect.xMin, boundsRect.rect.xMax), Random.Range(boundsRect.rect.yMin, boundsRect.rect.yMax), 0);
+        //pick a position
+        Vector3 pos = new Vector3(Random.Range(boundsRect.rect.xMin, boundsRect.rect.xMax), Random.Range(boundsRect.rect.yMin, boundsRect.rect.yMax), 0);
 
-        ////find a random X and Y values
-        //int randomX = Random.Range(boundsRect.rect.xMin, boundsRect.rect.
-        //int randomY = 0;
-        //int Zpos = 0;
-        //Vector3 vec = new Vector3(randomX, randomY,Zpos);
-        //return vec;
+        
+
+
+        while (RectTransformUtility.RectangleContainsScreenPoint(noSpawnRect, pos))
+        {
+             pos = new Vector3(Random.Range(boundsRect.rect.xMin, boundsRect.rect.xMax), Random.Range(boundsRect.rect.yMin, boundsRect.rect.yMax), 0);
+        }
+
+        return pos;
     }
 }
