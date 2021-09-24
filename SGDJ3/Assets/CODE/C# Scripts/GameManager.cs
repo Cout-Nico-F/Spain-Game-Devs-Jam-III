@@ -46,7 +46,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     
-    IEnumerator WaitForSecondsCoroutine(float seconds)
+    public IEnumerator WaitForSecondsCoroutine(float seconds)
     {
         //Wait for X seconds
         yield return new WaitForSecondsRealtime(seconds);

@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 01e13c8e685968744aac3638b6d149af
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8240134815193339079
+    second: caldera-Sheet_4
+  - first:
+      213: 3382347703613426027
+    second: caldera-Sheet_0
+  - first:
+      213: -4500857091330416157
+    second: caldera-Sheet_1
+  - first:
+      213: 2514495683549313917
+    second: caldera-Sheet_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -125,7 +137,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: caldera-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 18
+        width: 30
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c49de0d4f6da5270800000000000000
+      internalID: 8240134815193339079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caldera-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 18
+        width: 31
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b698cb4e05380fe20800000000000000
+      internalID: 3382347703613426027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caldera-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 18
+        width: 34
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e1e37e625eb981c0800000000000000
+      internalID: -4500857091330416157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caldera-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 18
+        width: 34
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7bb537708845e220800000000000000
+      internalID: 2514495683549313917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

@@ -7,9 +7,13 @@ public class CraftSystem : Singleton<CraftSystem>
     [SerializeField] private Transform witchSprite;
     [SerializeField] private GameObject poof_prefab;
     [SerializeField] private GameObject smoke_prefab;
+    [SerializeField] private Animator craft_anim;
 
     public Recipe MixIngredients(string ingredient1, string ingredient2)
     {
+        craft_anim.Play("PotCrafting");
+        //GameManager.Instance.WaitForSecondsCoroutine(2);
+
         if (ingredient1.Equals( ingredient2 ))
         {
             return  OneIngredientMix(ingredient1);           

@@ -98,6 +98,9 @@ TextureImporter:
   - first:
       213: -2419213569145259312
     second: npc11
+  - first:
+      213: 3294322798542869477
+    second: items-npc-bruja-ui_32
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -890,6 +893,27 @@ TextureImporter:
       bones: []
       spriteID: 0daba4f831a3d6ed0800000000000000
       internalID: -2419213569145259312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-npc-bruja-ui_32
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 52
+        width: 30
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e35e969129c7bd20800000000000000
+      internalID: 3294322798542869477
       vertices: []
       indices: 
       edges: []
