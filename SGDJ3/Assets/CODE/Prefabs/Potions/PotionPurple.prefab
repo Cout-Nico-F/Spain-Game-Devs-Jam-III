@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -9062671110190156755}
   m_Layer: 0
   m_Name: PotionPurple
-  m_TagString: Untagged
+  m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a4606b5612dd941bae6b1cd36dc8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: purple
   rb: {fileID: 0}
 --- !u!50 &6315874369338529964
 Rigidbody2D:

@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Potion : MonoBehaviour
 {
-    private bool isPressed = false;
-    private float releaseTime;
+    public string color;
+
     [SerializeField]
     private Rigidbody2D rb;
+
+    private bool isPressed = false;
+    private float releaseTime;
+ 
 
     private void Awake()
     {

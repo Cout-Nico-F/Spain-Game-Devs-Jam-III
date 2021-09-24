@@ -95,6 +95,9 @@ TextureImporter:
   - first:
       213: 5380017053134252406
     second: ingrediente4
+  - first:
+      213: -2419213569145259312
+    second: npc11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -866,6 +869,27 @@ TextureImporter:
       bones: []
       spriteID: 6796c995109a9aa40800000000000000
       internalID: 5380017053134252406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc11
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 176
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0daba4f831a3d6ed0800000000000000
+      internalID: -2419213569145259312
       vertices: []
       indices: 
       edges: []

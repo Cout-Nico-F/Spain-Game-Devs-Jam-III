@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ingredient
   - Knob
+  - Potion
   layers:
   - Default
   - TransparentFX
