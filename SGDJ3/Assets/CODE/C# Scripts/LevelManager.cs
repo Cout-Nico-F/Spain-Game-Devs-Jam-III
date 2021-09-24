@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
 
     private int health;
 
-    private int maxHealth = 1;
+    private int maxHealth = 3;
 
     public int LevelObjective { get => levelObjective; }
     public int Health { get => health; }

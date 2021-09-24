@@ -4,7 +4,9 @@ public class CraftSystem : Singleton<CraftSystem>
 {
     [SerializeField] private Recipe[] recipes;
     [SerializeField] private Transform potionSpawnPoint;
-    [SerializeField] private GameObject Poof_prefab;
+    [SerializeField] private Transform witchSprite;
+    [SerializeField] private GameObject poof_prefab;
+    [SerializeField] private GameObject smoke_prefab;
 
     public Recipe MixIngredients(string ingredient1, string ingredient2)
     {
@@ -44,20 +46,25 @@ public class CraftSystem : Singleton<CraftSystem>
         Destroy(ingredient1.gameObject);
         Destroy(ingredient2.gameObject);
 
-        // aqui se podria instanciar el efecto de puff y que la pocion esperase a que terminara para instanciarse
-        var poof1 = Instantiate(Poof_prefab, ingredient2.transform.position, Quaternion.identity);
+        // aqui se podria instanciar el efecto de crafteando y que la pocion esperase a que terminara para instanciarse
+        var poof1 = Instantiate(poof_prefab, ingredient2.transform.position, Quaternion.identity);
         Destroy(poof1, 2);
-        var poof2 = Instantiate(Poof_prefab, potionSpawnPoint.position, Quaternion.identity);
+        var poof2 = Instantiate(poof_prefab, potionSpawnPoint.position, Quaternion.identity);
         Destroy(poof2, 2);
         Instantiate(potion, potionSpawnPoint.position, Quaternion.identity);
     }
 
     public void WrongMix(Ingredient ingredient1, Ingredient ingredient2)
     {
-        GameObject.FindObjectOfType<LevelManager>().Damaged();
-
+        var poof1 = Instantiate(poof_prefab, ingredient2.transform.position, Quaternion.identity);
+        Destroy(poof1, 2);
         Destroy(ingredient1.gameObject);
         Destroy(ingredient2.gameObject);
+
+        var smoke = Instantiate(smoke_prefab, witchSprite.transform.position, Quaternion.identity);
+        Destroy(smoke, 4);
+
+        GameObject.FindObjectOfType<LevelManager>().Damaged();
     }
 }
 
