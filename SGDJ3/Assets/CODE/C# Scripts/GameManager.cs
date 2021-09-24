@@ -57,4 +57,15 @@ public class GameManager : Singleton<GameManager>
     {
         SceneManager.LoadScene("Gameplay");
     }
+
+
+    public void PlayHistory()
+    {
+        SceneManager.LoadScene("History");
+    }
+
+    public void GoToCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 }

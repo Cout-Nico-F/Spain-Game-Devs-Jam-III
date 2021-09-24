@@ -16,11 +16,12 @@ public class MainMenu : MonoBehaviour
 
     private void GoToCredits()
     {
+        GameManager.Instance.GoToCredits();
     }
 
     private void StartGame()
     {
-        GameManager.Instance.StartGame();
+        GameManager.Instance.PlayHistory();
     }
 
     
