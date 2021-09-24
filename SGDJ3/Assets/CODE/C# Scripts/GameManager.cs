@@ -1,17 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    UiManager uiManager;
     private bool isPaused;
 
     private void Start()
     {
-        uiManager = GameObject.FindObjectOfType<UiManager>();
+        DontDestroyOnLoad(gameObject);
+        ToMainMenu();
     }
 
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) )
@@ -20,33 +21,40 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    
     public void ToMainMenu()
     {
         Time.timeScale = 1;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu");
     }
 
+    
     public void Pause()
     {
         if (!isPaused)
         {
             Time.timeScale = 0;
             isPaused = true;
-            uiManager.Pause();
+            UiManager.Instance.Pause();
         }
         else
         {
             Time.timeScale = 1;
             isPaused = false;
-            uiManager.UnPause();
+            UiManager.Instance.UnPause();
         }
     }
 
+    
     IEnumerator WaitForSecondsCoroutine(float seconds)
     {
         //Wait for X seconds
         yield return new WaitForSecondsRealtime(seconds);
     }
 
-
+    
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Gameplay");
+    }
 }
