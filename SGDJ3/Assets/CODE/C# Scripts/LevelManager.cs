@@ -13,13 +13,17 @@ public class LevelManager : MonoBehaviour
 
     private int maxHealth = 3;
 
+    private bool hasPotion;
+
     public int LevelObjective { get => levelObjective; }
     public int Health { get => health; }
+    public bool HasPotion { get => hasPotion; set => hasPotion = value; }
 
     private void Awake()
     {
         health = maxHealth;
         levelObjective = 1;
+        hasPotion = false;
     }
 
     //Este metodo lo llamamos al detectar colision pocion-npc y comprobar que son del mismo color.

@@ -19,6 +19,8 @@ public class IngredientSpawner : MonoBehaviour
     [SerializeField] private Transform ingredientSpawnerGroup;
     private List<Ingredient> ingredientPool;
     private float timeRemaining;
+    private LevelManager levelManager;
+
 
 
     private void Awake()
@@ -27,17 +29,22 @@ public class IngredientSpawner : MonoBehaviour
         //seteo primera vuelta de ingredientes ( aca podemos cambiarlo a antojo para que siempre toque algun ingrediente primero
         //puede ser util para ense�ar la primer pocion a modo de tutorial )
         ingredientPool = new List<Ingredient>(ingredients);
+        levelManager = FindObjectOfType<LevelManager>();
+
     }
 
     private void Update()
     {
         if (timeRemaining > 0)
         {
-            timeRemaining -= Time.deltaTime;
+            timeRemaining -= Time.deltaTime;  
         }
         else
         {
-            Spawn();
+            if (!levelManager.HasPotion)
+            {
+                Spawn();
+            }
         }
     }
 

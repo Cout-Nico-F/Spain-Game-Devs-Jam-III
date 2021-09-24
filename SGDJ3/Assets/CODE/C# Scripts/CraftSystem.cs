@@ -9,7 +9,11 @@ public class CraftSystem : Singleton<CraftSystem>
     [SerializeField] private GameObject smoke_prefab;
     [SerializeField] private GameObject boom_prefab;
     [SerializeField] private Animator craft_anim;
-
+    private LevelManager levelManager;
+    private void Start()
+    {
+        levelManager = FindObjectOfType<LevelManager>();
+    }
     public Recipe MixIngredients(string ingredient1, string ingredient2)
     {
         craft_anim.Play("PotCrafting");
@@ -57,6 +61,8 @@ public class CraftSystem : Singleton<CraftSystem>
         var poof2 = Instantiate(poof_prefab, potionSpawnPoint.position, Quaternion.identity);
         Destroy(poof2, 2);
         Instantiate(potion, potionSpawnPoint.position, Quaternion.identity);
+
+        levelManager.HasPotion = true;
     }
 
     public void WrongMix(Ingredient ingredient1, Ingredient ingredient2)

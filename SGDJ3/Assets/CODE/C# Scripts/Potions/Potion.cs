@@ -11,13 +11,17 @@ public class Potion : MonoBehaviour
 
     private bool isPressed = false;
     private float releaseTime;
- 
+    private LevelManager levelManager;
+
 
     private void Awake()
     {
         rb = this.GetComponent<Rigidbody2D>();
         this.GetComponent<SpringJoint2D>().connectedBody = GameObject.FindGameObjectWithTag("Knob").GetComponent<Rigidbody2D>();
         releaseTime = 0.045f;
+
+        levelManager = FindObjectOfType<LevelManager>();
+
     }
     private void Update()
     {
@@ -43,6 +47,7 @@ public class Potion : MonoBehaviour
         isPressed = false;
         rb.isKinematic = false;
         StartCoroutine(Release());
+        levelManager.HasPotion = false;
     }
 
     IEnumerator Release()
