@@ -6,10 +6,11 @@ public class Ingredient : MonoBehaviour
     private bool isPressed;
     private float timeRemaining;
 
-    private const float timeLife = 3; //Tiempo que duran los ingredientes antes de desaparecer
+    private  float timeLife = 3.1f; //Tiempo que duran los ingredientes antes de desaparecer
 
     private void Awake()
     {
+        float randomness = Random.Range(0, 0.65f);
         timeRemaining = timeLife;
     }
 

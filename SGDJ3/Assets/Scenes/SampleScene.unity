@@ -1497,7 +1497,7 @@ PrefabInstance:
       objectReference: {fileID: 1401142369}
     - target: {fileID: 2759097315404769495, guid: bd4ba0a6815331e4fb32374eb624ee1c, type: 3}
       propertyPath: spawnDelayInSeconds
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2759097315404769495, guid: bd4ba0a6815331e4fb32374eb624ee1c, type: 3}
       propertyPath: ingredientSpawnerGroup
