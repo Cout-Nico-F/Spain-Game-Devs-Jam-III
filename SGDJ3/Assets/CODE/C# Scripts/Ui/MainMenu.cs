@@ -1,0 +1,32 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+
+public class MainMenu : MonoBehaviour
+{
+    [SerializeField] private Button _startGameButton;
+    [SerializeField] private Button _creditsButton;
+    [SerializeField] private Button _QuitGameButton;
+
+    private void Awake()
+    {
+        _startGameButton.onClick.AddListener(StartGame);
+        _creditsButton.onClick.AddListener(GoToCredits);
+        _QuitGameButton.onClick.AddListener(QuitGame);
+    }
+
+    private void GoToCredits()
+    {
+    }
+
+    private void StartGame()
+    {
+        GameManager.Instance.StartGame();
+    }
+
+    
+    private void QuitGame()
+    {
+        Application.Quit();
+    }
+
+}
