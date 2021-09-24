@@ -2,15 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-
+    UiManager uiManager;
     private bool isPaused;
 
-    IEnumerator WaitForSecondsCoroutine(float seconds)
+    private void Start()
     {
-        //Wait for X seconds
-        yield return new WaitForSecondsRealtime(seconds);
+        uiManager = GameObject.FindObjectOfType<UiManager>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) )
+        {
+            Pause();
+        }
     }
 
     public void ToMainMenu()
@@ -18,20 +25,28 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
+
     public void Pause()
     {
         if (!isPaused)
         {
             Time.timeScale = 0;
             isPaused = true;
-            //uiManager.ShowPauseUi(true);
+            uiManager.Pause();
         }
         else
         {
             Time.timeScale = 1;
             isPaused = false;
-            //uiManager.ShowPauseUi(false);
+            uiManager.UnPause();
         }
     }
+
+    IEnumerator WaitForSecondsCoroutine(float seconds)
+    {
+        //Wait for X seconds
+        yield return new WaitForSecondsRealtime(seconds);
+    }
+
 
 }
