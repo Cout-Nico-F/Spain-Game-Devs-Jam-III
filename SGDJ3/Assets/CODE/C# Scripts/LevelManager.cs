@@ -10,10 +10,11 @@ public class LevelManager : MonoBehaviour
     private int friendCount;
 
     private int health;
+
     private int maxHealth = 6;
 
     public int LevelObjective { get => levelObjective; }
-
+    public int Health { get => health; }
 
     private void Awake()
     {
@@ -30,6 +31,15 @@ public class LevelManager : MonoBehaviour
         {
             LevelCompleted();
         }
+    }
+
+    public void Damaged()
+    {
+        //TODO:desde aca llamar a la animacion de explosion de la olla
+        health--;
+        //y cambiar sprite de bruja durante unos segundos.
+        //UiManager.RefreshUI();
+
     }
 
     private void LevelCompleted()

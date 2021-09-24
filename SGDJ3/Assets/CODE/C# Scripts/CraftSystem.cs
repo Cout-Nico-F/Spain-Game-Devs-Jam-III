@@ -30,6 +30,8 @@ public class CraftSystem : Singleton<CraftSystem>
 
     public void WrongMix(Ingredient ingredient1, Ingredient ingredient2)
     {
+        GameObject.FindObjectOfType<LevelManager>().Damaged();
+
         Destroy(ingredient1.gameObject);
         Destroy(ingredient2.gameObject);
     }
