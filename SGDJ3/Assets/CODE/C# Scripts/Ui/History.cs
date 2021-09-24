@@ -8,10 +8,12 @@ public class History : MonoBehaviour
     private void Awake()
     {
         _startGameButton.onClick.AddListener(PlayGame);
+        AudioSystem.Instance.Play("History");
     }
 
     private void PlayGame()
     {
+        AudioSystem.Instance.Stop("History");
         GameManager.Instance.StartGame();
     }
 }
