@@ -4,7 +4,7 @@ public class CraftSystem : Singleton<CraftSystem>
 {
     [SerializeField] private Recipe[] recipes;
     [SerializeField] private Transform potionSpawnPoint;
-    
+    [SerializeField] private GameObject Poof_prefab;
 
     public Recipe MixIngredients(string ingredient1, string ingredient2)
     {
@@ -43,8 +43,10 @@ public class CraftSystem : Singleton<CraftSystem>
     {
         Destroy(ingredient1.gameObject);
         Destroy(ingredient2.gameObject);
-        
+
         // aqui se podria instanciar el efecto de puff y que la pocion esperase a que terminara para instanciarse
+        Instantiate(Poof_prefab, ingredient2.transform.position, Quaternion.identity);
+        Destroy(Poof_prefab, 2);
         Instantiate(potion, potionSpawnPoint.position, Quaternion.identity);
     }
 
