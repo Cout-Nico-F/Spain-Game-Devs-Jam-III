@@ -45,8 +45,10 @@ public class CraftSystem : Singleton<CraftSystem>
         Destroy(ingredient2.gameObject);
 
         // aqui se podria instanciar el efecto de puff y que la pocion esperase a que terminara para instanciarse
-        Instantiate(Poof_prefab, ingredient2.transform.position, Quaternion.identity);
-        Destroy(Poof_prefab, 2);
+        var poof1 = Instantiate(Poof_prefab, ingredient2.transform.position, Quaternion.identity);
+        Destroy(poof1, 2);
+        var poof2 = Instantiate(Poof_prefab, potionSpawnPoint.position, Quaternion.identity);
+        Destroy(poof2, 2);
         Instantiate(potion, potionSpawnPoint.position, Quaternion.identity);
     }
 

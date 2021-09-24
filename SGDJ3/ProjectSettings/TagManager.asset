@@ -56,3 +56,6 @@ TagManager:
   - name: Pociones
     uniqueID: 4152555659
     locked: 0
+  - name: Efectos
+    uniqueID: 2997488419
+    locked: 0
