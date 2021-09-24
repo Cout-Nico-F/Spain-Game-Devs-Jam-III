@@ -171,5 +171,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: PotionBlue
   ingredients:
-  - hoja
-  - seta
+  - leaf
+  - mush

@@ -171,5 +171,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: PotionYellow
   ingredients:
-  - estrella
-  - pasto
+  - star
+  - weed

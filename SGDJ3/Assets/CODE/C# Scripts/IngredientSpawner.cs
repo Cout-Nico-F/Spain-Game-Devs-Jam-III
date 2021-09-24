@@ -23,7 +23,7 @@ public class IngredientSpawner : MonoBehaviour
 
     private void Awake()
     {
-        timeRemaining = 3; //initial delay
+        timeRemaining = 2; //initial delay
         //seteo primera vuelta de ingredientes ( aca podemos cambiarlo a antojo para que siempre toque algun ingrediente primero
         //puede ser util para ense�ar la primer pocion a modo de tutorial )
         ingredientPool = new List<Ingredient>(ingredients);

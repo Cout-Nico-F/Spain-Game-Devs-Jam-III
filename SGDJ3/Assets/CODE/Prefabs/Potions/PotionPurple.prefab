@@ -171,5 +171,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: PotionPurple
   ingredients:
-  - pasto
-  - hoja
+  - weed
+  - leaf

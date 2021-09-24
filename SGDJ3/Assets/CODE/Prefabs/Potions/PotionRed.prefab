@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a4606b5612dd941bae6b1cd36dc8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  releaseTime: 0
   rb: {fileID: 0}
 --- !u!50 &6315874369338529964
 Rigidbody2D:
@@ -172,5 +171,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: PotionRed
   ingredients:
-  - estrella
-  - seta
+  - star
+  - mush
