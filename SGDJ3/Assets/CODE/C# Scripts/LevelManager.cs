@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : Singleton<LevelManager>
+public class LevelManager : MonoBehaviour
 {
     [SerializeField]
     private int levelObjective;
@@ -18,6 +18,7 @@ public class LevelManager : Singleton<LevelManager>
     private void Awake()
     {
         health = maxHealth;
+        levelObjective = 1;
     }
 
     //Este metodo lo llamamos al detectar colision pocion-npc y comprobar que son del mismo color.
@@ -34,5 +35,6 @@ public class LevelManager : Singleton<LevelManager>
     private void LevelCompleted()
     {
         //do
+        Debug.Log("WIN");
     }
 }

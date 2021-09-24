@@ -13,7 +13,7 @@ public class Npc : MonoBehaviour
         {
             if (collision.GetComponent<Potion>().color.Equals(_state.color))
             {
-                LevelManager.Instance.FriendJoined();
+                GameObject.FindObjectOfType<LevelManager>().FriendJoined();
                 Debug.Log("Cured, he wants to join the party!");
 
             }
