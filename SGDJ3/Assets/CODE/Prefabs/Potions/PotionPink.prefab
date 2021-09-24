@@ -171,5 +171,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: PotionPink
   ingredients:
-  - seta
-  - seta
+  - mush
+  - mush
