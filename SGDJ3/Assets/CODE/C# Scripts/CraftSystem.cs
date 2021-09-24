@@ -7,6 +7,7 @@ public class CraftSystem : Singleton<CraftSystem>
     [SerializeField] private Transform witchSprite;
     [SerializeField] private GameObject poof_prefab;
     [SerializeField] private GameObject smoke_prefab;
+    [SerializeField] private GameObject boom_prefab;
     [SerializeField] private Animator craft_anim;
 
     public Recipe MixIngredients(string ingredient1, string ingredient2)
@@ -65,8 +66,10 @@ public class CraftSystem : Singleton<CraftSystem>
         Destroy(ingredient1.gameObject);
         Destroy(ingredient2.gameObject);
 
+        var explosion = Instantiate(boom_prefab, craft_anim.transform.position, Quaternion.identity);
+        Destroy(explosion, 1.1f);
         var smoke = Instantiate(smoke_prefab, witchSprite.transform.position, Quaternion.identity);
-        Destroy(smoke, 4);
+        Destroy(smoke, 1.5f);
 
         GameObject.FindObjectOfType<LevelManager>().Damaged();
     }
