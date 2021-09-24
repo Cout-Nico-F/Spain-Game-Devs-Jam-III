@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
 
     private int health;
 
-    private int maxHealth = 6;
+    private int maxHealth = 1;
 
     public int LevelObjective { get => levelObjective; }
     public int Health { get => health; }
@@ -39,12 +39,20 @@ public class LevelManager : MonoBehaviour
         health--;
         //y cambiar sprite de bruja durante unos segundos.
         //UiManager.RefreshUI();
+        if (health < 1)
+        {
+            LevelOver();
+        }
 
     }
 
     private void LevelCompleted()
     {
-        //do
         Debug.Log("WIN");
+    }
+
+    private void LevelOver()
+    {
+        Debug.Log("LevelOver");
     }
 }
