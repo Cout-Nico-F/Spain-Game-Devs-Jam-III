@@ -17,6 +17,18 @@ TextureImporter:
   - first:
       213: 7386212651822625177
     second: win pantalla_4
+  - first:
+      213: -621936136158267798
+    second: gameover_ui
+  - first:
+      213: -7037498109957570733
+    second: marcoBoton
+  - first:
+      213: -699157414813385612
+    second: boton_exit
+  - first:
+      213: 1317031360408811731
+    second: boton_back
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -242,6 +254,90 @@ TextureImporter:
       bones: []
       spriteID: 9913263e549118660800000000000000
       internalID: 7386212651822625177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameover_ui
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 77
+        width: 95
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a66be4b11607e57f0800000000000000
+      internalID: -621936136158267798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marcoBoton
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 6
+        width: 58
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ffe7851c8c55e90800000000000000
+      internalID: -7037498109957570733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boton_exit
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 32
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47cb7f719081c46f0800000000000000
+      internalID: -699157414813385612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boton_back
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 32
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8773b5b09074210800000000000000
+      internalID: 1317031360408811731
       vertices: []
       indices: 
       edges: []
