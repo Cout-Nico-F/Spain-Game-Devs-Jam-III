@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -14,6 +15,8 @@ public class LevelManager : MonoBehaviour
     private int maxHealth = 6;
 
     private bool hasPotion;
+
+    public bool IsAnimationFinish;
 
     [SerializeField]
     private GameObject levelComplete_ui;
@@ -37,7 +40,11 @@ public class LevelManager : MonoBehaviour
         
         if (friendCount >= LevelObjective)
         {
-            LevelCompleted();
+            StartCoroutine(LevelCompleted());
+        }
+        else
+        {
+            IsAnimationFinish = false;
         }
     }
 
@@ -55,8 +62,13 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    private void LevelCompleted()
+    private IEnumerator LevelCompleted()
     {
+        while (!IsAnimationFinish)
+        {
+            yield return null;
+        }
+        
         Debug.Log("WIN");
         levelComplete_ui.SetActive(true);
     }
