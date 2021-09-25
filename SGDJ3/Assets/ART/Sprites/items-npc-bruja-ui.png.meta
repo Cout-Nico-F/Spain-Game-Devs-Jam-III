@@ -945,48 +945,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: mouse_1
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 129
-        width: 24
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2465336e6f3486a20800000000000000
-      internalID: 3055767074874021442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mouse_2
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 129
-        width: 24
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 579bb88348247c830800000000000000
-      internalID: 4091311922141182325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
