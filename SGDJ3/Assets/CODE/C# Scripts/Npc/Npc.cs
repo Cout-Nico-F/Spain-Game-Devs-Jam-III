@@ -10,12 +10,12 @@ public class Npc : MonoBehaviour
     [SerializeField] private string[] colors;
     private Dictionary<string, Sprite> dict;
     private float timer;
-    private float timerReset = 2;
+    private float timerReset = 3;
 
 
     private void Awake()
     {
-        timer = timerReset + Random.Range(0,2);
+        timer = timerReset + Random.Range(0,3);
 
         dict = new Dictionary<string, Sprite>();
         for (var i = 0; i < colors.Length; i++)
@@ -40,7 +40,7 @@ public class Npc : MonoBehaviour
         }
         else
         {
-            timer = timerReset + Random.Range(0, 2);
+            timer = timerReset + Random.Range(0, 3);
             Flip();
         }
     }
