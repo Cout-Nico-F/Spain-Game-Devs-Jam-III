@@ -9,12 +9,14 @@ public class Npc : MonoBehaviour
     [SerializeField] private Sprite[] images;
     [SerializeField] private string[] colors;
     private Dictionary<string, Sprite> dict;
+    private SpriteRenderer myRenderer;
     private float timer;
     private float timerReset = 3;
 
 
     private void Awake()
     {
+        myRenderer = GetComponent<SpriteRenderer>();
         timer = timerReset + Random.Range(0,3);
 
         dict = new Dictionary<string, Sprite>();
@@ -47,14 +49,7 @@ public class Npc : MonoBehaviour
 
     private void Flip()
     {
-        if (this.transform.eulerAngles.y == -180)
-        {
-            this.transform.Rotate(new Vector3(0, 0, 0));
-        }
-        else
-        {
-            this.transform.Rotate(new Vector3(0, 180, 0));
-        }
+        myRenderer.flipX = !myRenderer.flipX;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
