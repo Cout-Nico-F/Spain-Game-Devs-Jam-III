@@ -3410,7 +3410,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelObjective: 1
-  nextLevel: Level2
   healthSystem: {fileID: 230212454}
   IsAnimationFinish: 0
   levelComplete_ui: {fileID: 454659110}
