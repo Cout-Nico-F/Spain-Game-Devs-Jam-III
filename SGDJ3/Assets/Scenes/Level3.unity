@@ -3287,7 +3287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelObjective: 4
-  healthSystem: {fileID: 0}
+  healthSystem: {fileID: 1940818690}
   IsAnimationFinish: 0
   levelComplete_ui: {fileID: 454659110}
   levelOver_ui: {fileID: 287135184}
@@ -3910,6 +3910,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4038467690690834029, guid: 01637681b38cdf3418ccdc080c855cea, type: 3}
   m_PrefabInstance: {fileID: 1940818688}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1940818690 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4038467690690834030, guid: 01637681b38cdf3418ccdc080c855cea, type: 3}
+  m_PrefabInstance: {fileID: 1940818688}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61015244018eb1f4aa8dc8d08f59e0e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2062186832
 GameObject:
   m_ObjectHideFlags: 0
