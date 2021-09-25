@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: -4666665981825343954
     second: NotStar
+  - first:
+      213: 3758092952151343548
+    second: win pantalla_3
+  - first:
+      213: 7386212651822625177
+    second: win pantalla_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,7 +145,7 @@ TextureImporter:
       name: win pantalla_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 1
         width: 140
         height: 143
@@ -160,8 +166,8 @@ TextureImporter:
       name: Star
       rect:
         serializedVersion: 2
-        x: 144
-        y: 96
+        x: 160
+        y: 34
         width: 32
         height: 32
       alignment: 0
@@ -181,8 +187,8 @@ TextureImporter:
       name: NotStar
       rect:
         serializedVersion: 2
-        x: 144
-        y: 48
+        x: 208
+        y: 34
         width: 32
         height: 32
       alignment: 0
@@ -194,6 +200,48 @@ TextureImporter:
       bones: []
       spriteID: e2e96ebb30cac3fb0800000000000000
       internalID: -4666665981825343954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win pantalla_3
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 5
+        width: 120
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb141e5f0ad672430800000000000000
+      internalID: 3758092952151343548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: win pantalla_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 77
+        width: 120
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9913263e549118660800000000000000
+      internalID: 7386212651822625177
       vertices: []
       indices: 
       edges: []
