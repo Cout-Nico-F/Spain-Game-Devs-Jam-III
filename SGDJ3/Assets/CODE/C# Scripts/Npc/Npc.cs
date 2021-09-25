@@ -10,12 +10,14 @@ public class Npc : MonoBehaviour
     [SerializeField] private string[] colors;
     private Dictionary<string, Sprite> dict;
     private SpriteRenderer myRenderer;
+    private LevelManager _levelManager;
     private float timer;
     private float timerReset = 3;
 
 
     private void Awake()
     {
+        _levelManager = FindObjectOfType<LevelManager>();
         myRenderer = GetComponent<SpriteRenderer>();
         timer = timerReset + Random.Range(0,3);
 
@@ -67,9 +69,10 @@ public class Npc : MonoBehaviour
             if (collision.GetComponent<Potion>().color.Equals(_state.color))
             {
                 _stateVisual.sprite = images[Random.Range(4, 6)];
-                GameObject.FindObjectOfType<LevelManager>().FriendJoined();
+                _levelManager.FriendJoined();
                 
-                // TODO: animacion de contento o parpadeo y desaparecer 
+                // TODO: animacion de contento o parpadeo y desaparecer
+                // al acabar la animacion se llama al evento finishAnimation
                 Debug.Log("Cured, he wants to join the party!");
 
             }
@@ -80,4 +83,10 @@ public class Npc : MonoBehaviour
             }
         }
     }
+
+    public void FinishAnimation()
+    {
+        _levelManager.IsAnimationFinish = true;
+    }
+    
 }
