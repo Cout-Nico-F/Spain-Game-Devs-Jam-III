@@ -73,6 +73,8 @@ public class Npc : MonoBehaviour
                 
                 // TODO: animacion de contento o parpadeo y desaparecer
                 // al acabar la animacion se llama al evento finishAnimation
+                // de momento para probar lo llamamos siempre
+                FinishAnimation();
                 Debug.Log("Cured, he wants to join the party!");
 
             }
