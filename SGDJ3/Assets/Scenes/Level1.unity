@@ -3409,7 +3409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36abd370f021b9b4091159f58a7b11e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelObjective: 1
+  levelObjective: 2
   healthSystem: {fileID: 230212454}
   levelComplete_ui: {fileID: 454659110}
   levelOver_ui: {fileID: 287135184}
