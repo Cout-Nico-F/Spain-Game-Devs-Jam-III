@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5456219019226872873}
   - component: {fileID: 4458353768493833376}
   - component: {fileID: -1370914205700103537}
+  - component: {fileID: -1758976072005672979}
   m_Layer: 0
   m_Name: Ing_mush
   m_TagString: Ingredient
@@ -159,3 +160,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: mush
+--- !u!114 &-1758976072005672979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3990647280322756584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c23c5c12256784a8148a96657b24d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

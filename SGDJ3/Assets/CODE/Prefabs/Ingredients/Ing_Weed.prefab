@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4472206974854935752}
   - component: {fileID: 2488569586167403290}
   - component: {fileID: 2094551892857707711}
+  - component: {fileID: 7764526028925342919}
   m_Layer: 0
   m_Name: Ing_Weed
   m_TagString: Ingredient
@@ -159,3 +160,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: weed
+--- !u!114 &7764526028925342919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6139616382051571015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c23c5c12256784a8148a96657b24d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

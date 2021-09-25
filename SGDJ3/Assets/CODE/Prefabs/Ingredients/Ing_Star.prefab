@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -6871526827201995959}
   - component: {fileID: 3668409621480299969}
   - component: {fileID: 3728783955030389574}
+  - component: {fileID: 3895909721543450625}
   m_Layer: 0
   m_Name: Ing_Star
   m_TagString: Ingredient
@@ -159,3 +160,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: star
+--- !u!114 &3895909721543450625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369826109370500749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c23c5c12256784a8148a96657b24d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

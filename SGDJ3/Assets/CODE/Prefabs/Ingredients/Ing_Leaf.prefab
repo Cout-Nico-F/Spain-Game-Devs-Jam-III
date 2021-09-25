@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1570945304860036492}
   - component: {fileID: -4990662210653880583}
   - component: {fileID: -8191338184627832555}
+  - component: {fileID: -7620499361353593651}
   m_Layer: 0
   m_Name: Ing_Leaf
   m_TagString: Ingredient
@@ -159,3 +160,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: leaf
+--- !u!114 &-7620499361353593651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7585634374119463423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c23c5c12256784a8148a96657b24d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
