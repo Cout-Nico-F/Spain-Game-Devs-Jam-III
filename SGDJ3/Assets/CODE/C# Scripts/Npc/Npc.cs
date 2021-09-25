@@ -10,6 +10,8 @@ public class Npc : MonoBehaviour
     [SerializeField] private Sprite[] images;
     [SerializeField] private string[] colors;
     [SerializeField] private GameObject poofPotionOKPrefab;
+    [SerializeField] private GameObject poofPotionFailPrefab;
+    private Transform effectSpawnPoint;
     private Animator poofAnimator;
     private Dictionary<string, Sprite> dict;
     private SpriteRenderer myRenderer;
@@ -22,6 +24,7 @@ public class Npc : MonoBehaviour
     {
         _levelManager = FindObjectOfType<LevelManager>();
         myRenderer = GetComponent<SpriteRenderer>();
+        effectSpawnPoint = transform.Find("effectSpawnPoint");
         timer = timerReset + Random.Range(0,3);
 
         dict = new Dictionary<string, Sprite>();
@@ -80,19 +83,29 @@ public class Npc : MonoBehaviour
             }
             else
             {
-                // TODO: ¿alguna animacion de enfado? ¿se va del bosque?
+                PotionFailEffect();
+                
                 Debug.Log("Exploding recipe.");
             }
         }
     }
 
+    
     private void PotionOKEffect()
     {
-        var poof = Instantiate(poofPotionOKPrefab, transform.position, Quaternion.identity);
+        var poof = Instantiate(poofPotionOKPrefab, effectSpawnPoint.position, Quaternion.identity);
         poofAnimator = poof.GetComponent<Animator>();
         StartCoroutine(FinishAnimation());
         Destroy(poof, 2);
     }
+    
+    
+    private void PotionFailEffect()
+    {
+        var poof = Instantiate(poofPotionFailPrefab, effectSpawnPoint.position, Quaternion.identity);
+        Destroy(poof, 2);
+    }
+    
     
     private IEnumerator FinishAnimation()
     {
