@@ -24,6 +24,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject levelOver_ui;
 
+    private LevelStars _levelStars;
+
     public int LevelObjective { get => levelObjective; }
     public int Health { get => health; }
     public bool HasPotion { get => hasPotion; set => hasPotion = value; }
@@ -32,6 +34,7 @@ public class LevelManager : MonoBehaviour
     {
         health = maxHealth;
         hasPotion = false;
+        _levelStars = levelComplete_ui.transform.Find("Stars").GetComponent<LevelStars>();
     }
 
     //Este metodo lo llamamos al detectar colision pocion-npc y comprobar que son del mismo color.
@@ -72,6 +75,7 @@ public class LevelManager : MonoBehaviour
         
         Debug.Log("WIN");
         levelComplete_ui.SetActive(true);
+        _levelStars.SetStars(Mathf.FloorToInt(health/2f));
     }
 
     private void LevelOver()

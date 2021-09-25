@@ -64,7 +64,9 @@ public class Npc : MonoBehaviour
     {
         if (collision.CompareTag("Potion"))
         {
-            // si colisiona con la pocion rosa cambia el estado a otro aleatorio
+            Destroy(collision.gameObject);
+            
+            // si colisiona con la pocion rosa cambia el estado del Npc a otro aleatorio
             if (collision.GetComponent<Potion>().color.Equals("pink"))
             {
                 PotionOKEffect();
