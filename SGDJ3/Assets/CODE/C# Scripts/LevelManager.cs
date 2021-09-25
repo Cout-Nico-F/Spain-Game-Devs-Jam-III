@@ -15,6 +15,11 @@ public class LevelManager : MonoBehaviour
 
     private bool hasPotion;
 
+    [SerializeField]
+    private GameObject levelComplete_ui;
+    [SerializeField]
+    private GameObject levelOver_ui;
+
     public int LevelObjective { get => levelObjective; }
     public int Health { get => health; }
     public bool HasPotion { get => hasPotion; set => hasPotion = value; }
@@ -22,7 +27,6 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         health = maxHealth;
-        levelObjective = 1;
         hasPotion = false;
     }
 
@@ -53,10 +57,13 @@ public class LevelManager : MonoBehaviour
     private void LevelCompleted()
     {
         Debug.Log("WIN");
+        levelComplete_ui.SetActive(true);
     }
 
     private void LevelOver()
     {
         Debug.Log("LevelOver");
+        levelOver_ui.SetActive(true);
+
     }
 }
