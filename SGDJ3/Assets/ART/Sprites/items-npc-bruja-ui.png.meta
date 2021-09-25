@@ -101,6 +101,12 @@ TextureImporter:
   - first:
       213: 3294322798542869477
     second: items-npc-bruja-ui_32
+  - first:
+      213: 3055767074874021442
+    second: mouse_1
+  - first:
+      213: 4091311922141182325
+    second: mouse_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -730,27 +736,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ingrediente5
-      rect:
-        serializedVersion: 2
-        x: 335
-        y: 30
-        width: 15
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a9172a0009ae637a0800000000000000
-      internalID: -6397668316426374758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: pocion violeta
       rect:
         serializedVersion: 2
@@ -914,6 +899,90 @@ TextureImporter:
       bones: []
       spriteID: 5e35e969129c7bd20800000000000000
       internalID: 3294322798542869477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estado_feliz1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 126
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e22dfef91f8645e60800000000000000
+      internalID: 7950094629195469358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-npc-bruja-ui_34
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 126
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7a4dc516fd24680800000000000000
+      internalID: -8772203514902042627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouse_1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 129
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2465336e6f3486a20800000000000000
+      internalID: 3055767074874021442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouse_2
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 129
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579bb88348247c830800000000000000
+      internalID: 4091311922141182325
       vertices: []
       indices: 
       edges: []
