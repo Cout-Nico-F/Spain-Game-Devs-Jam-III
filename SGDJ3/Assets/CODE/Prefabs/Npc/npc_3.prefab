@@ -233,6 +233,7 @@ MonoBehaviour:
   - {fileID: -7379063422775691832, guid: 82ca1cffc21fbb74ebf8a8539e46b4cf, type: 3}
   - {fileID: -6618352148330917438, guid: 82ca1cffc21fbb74ebf8a8539e46b4cf, type: 3}
   - {fileID: -611687756123514714, guid: 82ca1cffc21fbb74ebf8a8539e46b4cf, type: 3}
+  - {fileID: -2758341998126072157, guid: 82ca1cffc21fbb74ebf8a8539e46b4cf, type: 3}
   colors:
   - yellow
   - purple

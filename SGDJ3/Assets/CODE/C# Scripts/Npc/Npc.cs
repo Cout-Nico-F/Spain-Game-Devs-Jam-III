@@ -18,7 +18,7 @@ public class Npc : MonoBehaviour
         timer = timerReset + Random.Range(0,3);
 
         dict = new Dictionary<string, Sprite>();
-        for (var i = 0; i < colors.Length; i++)
+        for (var i = 0; i < 4; i++)
         {
             dict.Add(colors[i], images[i]);
         }
@@ -64,14 +64,14 @@ public class Npc : MonoBehaviour
             // si colisiona con la pocion rosa cambia el estado a otro aleatorio
             if (collision.GetComponent<Potion>().color.Equals("pink"))
             {
-                _state.color = colors[Random.Range(0, colors.Length - 1)];
+                _state.color = colors[Random.Range(0, 4)];
                 _stateVisual.sprite = dict[_state.color];
                 return;
             }
             
             if (collision.GetComponent<Potion>().color.Equals(_state.color))
             {
-                _stateVisual.sprite = images[4];
+                _stateVisual.sprite = images[Random.Range(4, 6)];
                 GameObject.FindObjectOfType<LevelManager>().FriendJoined();
                 
                 // TODO: animacion de contento o parpadeo y desaparecer 
