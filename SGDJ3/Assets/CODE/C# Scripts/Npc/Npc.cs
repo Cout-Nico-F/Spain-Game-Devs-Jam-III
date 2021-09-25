@@ -9,16 +9,18 @@ public class Npc : MonoBehaviour
     [SerializeField] private Sprite[] images;
     [SerializeField] private string[] colors;
     private Dictionary<string, Sprite> dict;
+    private SpriteRenderer myRenderer;
     private float timer;
     private float timerReset = 3;
 
 
     private void Awake()
     {
+        myRenderer = GetComponent<SpriteRenderer>();
         timer = timerReset + Random.Range(0,3);
 
         dict = new Dictionary<string, Sprite>();
-        for (var i = 0; i < colors.Length; i++)
+        for (var i = 0; i < 4; i++)
         {
             dict.Add(colors[i], images[i]);
         }
@@ -47,14 +49,7 @@ public class Npc : MonoBehaviour
 
     private void Flip()
     {
-        if (this.transform.eulerAngles.y == -180)
-        {
-            this.transform.Rotate(new Vector3(0, 0, 0));
-        }
-        else
-        {
-            this.transform.Rotate(new Vector3(0, 180, 0));
-        }
+        myRenderer.flipX = !myRenderer.flipX;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,14 +59,14 @@ public class Npc : MonoBehaviour
             // si colisiona con la pocion rosa cambia el estado a otro aleatorio
             if (collision.GetComponent<Potion>().color.Equals("pink"))
             {
-                _state.color = colors[Random.Range(0, colors.Length - 1)];
+                _state.color = colors[Random.Range(0, 4)];
                 _stateVisual.sprite = dict[_state.color];
                 return;
             }
             
             if (collision.GetComponent<Potion>().color.Equals(_state.color))
             {
-                _stateVisual.sprite = images[4];
+                _stateVisual.sprite = images[Random.Range(4, 6)];
                 GameObject.FindObjectOfType<LevelManager>().FriendJoined();
                 
                 // TODO: animacion de contento o parpadeo y desaparecer 
