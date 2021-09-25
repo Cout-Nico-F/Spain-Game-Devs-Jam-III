@@ -55,7 +55,7 @@ public class GameManager : Singleton<GameManager>
     
     public void StartGame()
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene("Level1");
     }
 
 
