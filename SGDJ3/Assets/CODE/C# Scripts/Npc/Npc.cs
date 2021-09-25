@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,6 +9,8 @@ public class Npc : MonoBehaviour
     [SerializeField] private State _state;
     [SerializeField] private Sprite[] images;
     [SerializeField] private string[] colors;
+    [SerializeField] private GameObject poofPotionOKPrefab;
+    private Animator poofAnimator;
     private Dictionary<string, Sprite> dict;
     private SpriteRenderer myRenderer;
     private LevelManager _levelManager;
@@ -61,6 +64,7 @@ public class Npc : MonoBehaviour
             // si colisiona con la pocion rosa cambia el estado a otro aleatorio
             if (collision.GetComponent<Potion>().color.Equals("pink"))
             {
+                PotionOKEffect();
                 _state.color = colors[Random.Range(0, 4)];
                 _stateVisual.sprite = dict[_state.color];
                 return;
@@ -68,15 +72,11 @@ public class Npc : MonoBehaviour
             
             if (collision.GetComponent<Potion>().color.Equals(_state.color))
             {
+                PotionOKEffect();
                 _stateVisual.sprite = images[Random.Range(4, 6)];
                 _levelManager.FriendJoined();
                 
-                // TODO: animacion de contento o parpadeo y desaparecer
-                // al acabar la animacion se llama al evento finishAnimation
-                // de momento para probar lo llamamos siempre
-                FinishAnimation();
                 Debug.Log("Cured, he wants to join the party!");
-
             }
             else
             {
@@ -86,8 +86,21 @@ public class Npc : MonoBehaviour
         }
     }
 
-    public void FinishAnimation()
+    private void PotionOKEffect()
     {
+        var poof = Instantiate(poofPotionOKPrefab, transform.position, Quaternion.identity);
+        poofAnimator = poof.GetComponent<Animator>();
+        StartCoroutine(FinishAnimation());
+        Destroy(poof, 2);
+    }
+    
+    private IEnumerator FinishAnimation()
+    {
+        while (poofAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+        {
+            yield return null;
+        }
+        
         _levelManager.IsAnimationFinish = true;
     }
     
