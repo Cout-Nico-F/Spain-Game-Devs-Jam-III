@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     private bool isPaused;
+    [SerializeField]
+    private Texture2D pressedCursor;
+    [SerializeField]
+    private Texture2D defaultCursor;
 
     private void Start()
     {
@@ -18,6 +22,16 @@ public class GameManager : Singleton<GameManager>
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) )
         {
             Pause();
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Cursor.SetCursor(pressedCursor, new Vector2(16, 16), CursorMode.Auto);
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            Cursor.SetCursor(defaultCursor, new Vector2(16,16), CursorMode.Auto);
         }
     }
 
