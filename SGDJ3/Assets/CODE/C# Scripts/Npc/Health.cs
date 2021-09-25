@@ -31,11 +31,6 @@ public class Health : MonoBehaviour
             color.a = 0;
             hearts[heartNumber].color = color;
             heartNumber--;
-            if (heartNumber < 0)
-            {
-                Debug.Log("Level Over");
-                return;
-            }
         }
         fullHeart = !fullHeart;
     }

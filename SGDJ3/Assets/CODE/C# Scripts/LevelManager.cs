@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -7,11 +5,13 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private int levelObjective;
 
+    [SerializeField] private Health healthSystem;
+
     private int friendCount;
 
     private int health;
 
-    private int maxHealth = 3;
+    private int maxHealth = 6;
 
     private bool hasPotion;
 
@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour
     public void FriendJoined()
     {
         friendCount++;
-
+        
         if (friendCount >= LevelObjective)
         {
             LevelCompleted();
@@ -45,6 +45,7 @@ public class LevelManager : MonoBehaviour
     {
         //TODO:desde aca llamar a la animacion de explosion de la olla
         health--;
+        healthSystem.TakeDamage();
         //y cambiar sprite de bruja durante unos segundos.
         //UiManager.RefreshUI();
         if (health < 1)
