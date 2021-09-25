@@ -190,6 +190,7 @@ MonoBehaviour:
   - red
   - pink
   poofPotionOKPrefab: {fileID: 3036672447810044762, guid: fcef0505f06c76442b4b15bad1ec1d6d, type: 3}
+  poofPotionFailPrefab: {fileID: 3036672447810044762, guid: 374d410b6a735d24991b001ca0dbf56c, type: 3}
 --- !u!1 &9024794367330042245
 GameObject:
   m_ObjectHideFlags: 0

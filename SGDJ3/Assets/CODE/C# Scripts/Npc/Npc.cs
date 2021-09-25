@@ -10,6 +10,7 @@ public class Npc : MonoBehaviour
     [SerializeField] private Sprite[] images;
     [SerializeField] private string[] colors;
     [SerializeField] private GameObject poofPotionOKPrefab;
+    [SerializeField] private GameObject poofPotionFailPrefab;
     private Transform effectSpawnPoint;
     private Animator poofAnimator;
     private Dictionary<string, Sprite> dict;
@@ -82,12 +83,14 @@ public class Npc : MonoBehaviour
             }
             else
             {
-                // TODO: ¿alguna animacion de enfado? ¿se va del bosque?
+                PotionFailEffect();
+                
                 Debug.Log("Exploding recipe.");
             }
         }
     }
 
+    
     private void PotionOKEffect()
     {
         var poof = Instantiate(poofPotionOKPrefab, effectSpawnPoint.position, Quaternion.identity);
@@ -95,6 +98,14 @@ public class Npc : MonoBehaviour
         StartCoroutine(FinishAnimation());
         Destroy(poof, 2);
     }
+    
+    
+    private void PotionFailEffect()
+    {
+        var poof = Instantiate(poofPotionFailPrefab, effectSpawnPoint.position, Quaternion.identity);
+        Destroy(poof, 2);
+    }
+    
     
     private IEnumerator FinishAnimation()
     {
