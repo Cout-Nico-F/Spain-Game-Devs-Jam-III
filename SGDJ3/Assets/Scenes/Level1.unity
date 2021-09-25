@@ -3410,6 +3410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelObjective: 1
+  healthSystem: {fileID: 230212454}
   levelComplete_ui: {fileID: 454659110}
   levelOver_ui: {fileID: 287135184}
 --- !u!4 &1674794875
