@@ -10,6 +10,7 @@ public class Npc : MonoBehaviour
     [SerializeField] private Sprite[] images;
     [SerializeField] private string[] colors;
     [SerializeField] private GameObject poofPotionOKPrefab;
+    private Transform effectSpawnPoint;
     private Animator poofAnimator;
     private Dictionary<string, Sprite> dict;
     private SpriteRenderer myRenderer;
@@ -22,6 +23,7 @@ public class Npc : MonoBehaviour
     {
         _levelManager = FindObjectOfType<LevelManager>();
         myRenderer = GetComponent<SpriteRenderer>();
+        effectSpawnPoint = transform.Find("effectSpawnPoint");
         timer = timerReset + Random.Range(0,3);
 
         dict = new Dictionary<string, Sprite>();
@@ -88,7 +90,7 @@ public class Npc : MonoBehaviour
 
     private void PotionOKEffect()
     {
-        var poof = Instantiate(poofPotionOKPrefab, transform.position, Quaternion.identity);
+        var poof = Instantiate(poofPotionOKPrefab, effectSpawnPoint.position, Quaternion.identity);
         poofAnimator = poof.GetComponent<Animator>();
         StartCoroutine(FinishAnimation());
         Destroy(poof, 2);
