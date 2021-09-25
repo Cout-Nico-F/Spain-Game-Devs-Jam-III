@@ -11,7 +11,9 @@ public class Potion : MonoBehaviour
 
     private bool isPressed = false;
     private float releaseTime;
+    private float maxDragDistance = 4f;
     private LevelManager levelManager;
+    private Rigidbody2D knob_Rb;
 
 
     private void Awake()
@@ -21,13 +23,18 @@ public class Potion : MonoBehaviour
         releaseTime = 0.045f;
 
         levelManager = FindObjectOfType<LevelManager>();
-
+        knob_Rb  = GameObject.FindGameObjectWithTag("Knob").GetComponent<Rigidbody2D>();
     }
     private void Update()
     {
         if (isPressed)
         {
-            rb.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (Vector3.Distance(mousePos, knob_Rb.position) > maxDragDistance)
+            {
+                rb.position = knob_Rb.position + (mousePos - knob_Rb.position).normalized * maxDragDistance;
+            }
+            else rb.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
     }
 
