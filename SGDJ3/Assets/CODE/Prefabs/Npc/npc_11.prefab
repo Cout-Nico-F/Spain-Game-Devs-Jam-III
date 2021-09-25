@@ -150,11 +150,13 @@ MonoBehaviour:
   - {fileID: -5510580640832241291, guid: 82ca1cffc21fbb74ebf8a8539e46b4cf, type: 3}
   - {fileID: -7379063422775691832, guid: 82ca1cffc21fbb74ebf8a8539e46b4cf, type: 3}
   - {fileID: -6618352148330917438, guid: 82ca1cffc21fbb74ebf8a8539e46b4cf, type: 3}
+  - {fileID: -611687756123514714, guid: 82ca1cffc21fbb74ebf8a8539e46b4cf, type: 3}
   colors:
   - yellow
   - purple
   - blue
   - red
+  - pink
 --- !u!1 &5960792428200883303
 GameObject:
   m_ObjectHideFlags: 0
