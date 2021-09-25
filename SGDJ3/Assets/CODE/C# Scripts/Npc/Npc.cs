@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,10 +8,14 @@ public class Npc : MonoBehaviour
     [SerializeField] private Sprite[] images;
     [SerializeField] private string[] colors;
     private Dictionary<string, Sprite> dict;
+    private float timer;
+    private float timerReset = 2;
 
 
     private void Awake()
     {
+        timer = timerReset + Random.Range(0,2);
+
         dict = new Dictionary<string, Sprite>();
         for (var i = 0; i < colors.Length; i++)
         {
@@ -28,7 +31,31 @@ public class Npc : MonoBehaviour
         }
     }
 
-    
+    private void Update()
+    {
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            timer = timerReset + Random.Range(0, 2);
+            Flip();
+        }
+    }
+
+    private void Flip()
+    {
+        if (this.transform.eulerAngles.y == -180)
+        {
+            this.transform.Rotate(new Vector3(0, 0, 0));
+        }
+        else
+        {
+            this.transform.Rotate(new Vector3(0, 180, 0));
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Potion"))
