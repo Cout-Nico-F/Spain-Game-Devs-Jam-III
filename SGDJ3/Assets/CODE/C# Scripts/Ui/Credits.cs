@@ -12,6 +12,7 @@ public class Credits : MonoBehaviour
 
     private void BackToMenu()
     {
+        AudioSystem.Instance.Play("Boton");
         GameManager.Instance.ToMainMenu();
     }
 }

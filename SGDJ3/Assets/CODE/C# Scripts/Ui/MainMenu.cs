@@ -22,17 +22,22 @@ public class MainMenu : MonoBehaviour
 
     private void GoToCredits()
     {
+        AudioSystem.Instance.Play("Boton");
+
         GameManager.Instance.GoToCredits();
     }
 
     private void StartGame()
     {
+        AudioSystem.Instance.Play("Boton Aceptar");
         GameManager.Instance.PlayHistory();
     }
 
     
     private void QuitGame()
     {
+        AudioSystem.Instance.Play("Boton");
+
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

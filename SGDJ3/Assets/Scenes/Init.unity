@@ -457,7 +457,7 @@ MonoBehaviour:
   - name: Agarrar Tirachinas
     soundFX: 1
     clip: {fileID: 8300000, guid: 75cc90901df28654eaceeffebb619411, type: 3}
-    volume: 0.633
+    volume: 0.741
     loop: 0
     playOnAwake: 1
   - name: Potion Spawn
@@ -475,7 +475,7 @@ MonoBehaviour:
   - name: Explosion
     soundFX: 1
     clip: {fileID: 8300000, guid: 2a296548bf1d9b246b47a8c5f0a70674, type: 3}
-    volume: 0.633
+    volume: 0.773
     loop: 0
     playOnAwake: 1
   - name: Impacto Bueno
@@ -499,7 +499,7 @@ MonoBehaviour:
   - name: Ingrediente Mezclado
     soundFX: 1
     clip: {fileID: 8300000, guid: b701955d3a297f04b9650fe4ca196043, type: 3}
-    volume: 0.633
+    volume: 0.773
     loop: 0
     playOnAwake: 1
   - name: Ingrediente Pinchado
@@ -511,13 +511,13 @@ MonoBehaviour:
   - name: Lanzar Pocion
     soundFX: 1
     clip: {fileID: 8300000, guid: 83ecbffec74e49444b3d5ca86d594bf8, type: 3}
-    volume: 0.633
+    volume: 0.773
     loop: 0
     playOnAwake: 1
   - name: Olla Burbujeando
     soundFX: 1
     clip: {fileID: 8300000, guid: b648d265b0c07c4459fb161c9a228a86, type: 3}
-    volume: 0.633
+    volume: 0.773
     loop: 0
     playOnAwake: 1
   - name: Gameplay

@@ -45,22 +45,25 @@ public class Potion : MonoBehaviour
 
     private void OnMouseDown()
     {
+        AudioSystem.Instance.Play("Agarrar Tirachinas");
+
         isPressed = true;
         rb.isKinematic = true;
     }
 
     private void OnMouseUp()
     {
+
         isPressed = false;
         rb.isKinematic = false;
         StartCoroutine(Release());
         levelManager.HasPotion = false;
-
-        AudioSystem.Instance.Play("Lanzar Pocion");
     }
 
     IEnumerator Release()
     {
+        AudioSystem.Instance.Play("Lanzar Pocion");
+
         yield return new WaitForSeconds(releaseTime);
 
         GetComponent<SpringJoint2D>().enabled = false;

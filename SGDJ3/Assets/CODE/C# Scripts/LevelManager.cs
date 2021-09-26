@@ -107,11 +107,15 @@ public class LevelManager : MonoBehaviour
 
     public void Retry()
     {
+        AudioSystem.Instance.Play("Boton Aceptar");
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void NextLevel()
     {
+        AudioSystem.Instance.Play("Boton Aceptar");
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }

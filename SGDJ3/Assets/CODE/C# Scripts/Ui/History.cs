@@ -13,6 +13,7 @@ public class History : MonoBehaviour
 
     private void PlayGame()
     {
+        AudioSystem.Instance.Play("Boton Aceptar");
         AudioSystem.Instance.Stop("History");
         GameManager.Instance.StartGame();
     }
