@@ -191,6 +191,7 @@ MonoBehaviour:
   - pink
   poofPotionOKPrefab: {fileID: 3036672447810044762, guid: fcef0505f06c76442b4b15bad1ec1d6d, type: 3}
   poofPotionFailPrefab: {fileID: 3036672447810044762, guid: 374d410b6a735d24991b001ca0dbf56c, type: 3}
+  poofPotionSwitchPrefab: {fileID: 3036672447810044762, guid: 02fa9373d8949c344a36f99b000d39ba, type: 3}
 --- !u!1 &8757984324139428041
 GameObject:
   m_ObjectHideFlags: 0

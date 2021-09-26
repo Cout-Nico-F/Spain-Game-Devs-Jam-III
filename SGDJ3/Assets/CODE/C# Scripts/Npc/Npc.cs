@@ -78,7 +78,7 @@ public class Npc : MonoBehaviour
             
             if (collision.GetComponent<Potion>().color.Equals(_state.color))
             {
-                PotionOKEffect();
+                PotionSwitchEffect();
                 _stateVisual.sprite = images[Random.Range(4, 6)];
                 _levelManager.FriendJoined();
                 
