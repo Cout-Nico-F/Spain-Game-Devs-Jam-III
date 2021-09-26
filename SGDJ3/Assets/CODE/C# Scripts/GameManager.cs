@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class GameManager : Singleton<GameManager>
     private bool isPaused;
     private CursorMove cursor;
     private List<string> _partyInvitations;
+    private bool isGamePlay;
 
     public List<string> PartyInvitations { get => _partyInvitations; set => _partyInvitations = value; }
 
@@ -17,14 +19,18 @@ public class GameManager : Singleton<GameManager>
         _partyInvitations = new List<string>();
         cursor = null;
         ToMainMenu();
+        isGamePlay = false;
     }
 
     
     private void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) && SceneManager.GetActiveScene().name.StartsWith("Level"))
+        if (isGamePlay)
         {
-            Pause();
+            if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) && SceneManager.GetActiveScene().name.StartsWith("Level"))
+            {
+                Pause();
+            }
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -42,11 +48,11 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    
     public void ToMainMenu()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
+        isGamePlay = false;
     }
 
     
@@ -79,6 +85,7 @@ public class GameManager : Singleton<GameManager>
     public void StartGame()
     {
         SceneManager.LoadScene("Level1");
+        isGamePlay = true;
     }
 
 
@@ -90,6 +97,7 @@ public class GameManager : Singleton<GameManager>
     public void GoToCredits()
     {
         SceneManager.LoadScene("Credits");
+        isGamePlay = false;
     }
 
     public void InviteToParty(string npcId)
