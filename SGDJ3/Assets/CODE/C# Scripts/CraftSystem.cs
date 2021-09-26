@@ -75,7 +75,7 @@ public class CraftSystem : Singleton<CraftSystem>
         var explosion = Instantiate(boom_prefab, craft_anim.transform.position, Quaternion.identity);
         Destroy(explosion, 1.1f);
         var smoke = Instantiate(smoke_prefab, witchSprite.transform.position, Quaternion.identity);
-        Destroy(smoke, 1.5f);
+        Destroy(smoke, 1.2f);
 
         GameObject.FindObjectOfType<LevelManager>().Damaged();
     }
