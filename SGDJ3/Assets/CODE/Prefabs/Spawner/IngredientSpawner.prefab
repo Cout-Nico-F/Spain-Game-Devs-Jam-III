@@ -43,9 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a44fb5f4a5f16f48b481315a8e35f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundsRect: {fileID: 0}
+  noSpawnRect: {fileID: 0}
   ingredients:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3728783955030389574, guid: 79031283b0b74d44790cad6180e9d16d, type: 3}
+  - {fileID: 2094551892857707711, guid: 00e7e562c9cb60b49a8e6e2c08a559a0, type: 3}
+  - {fileID: -8191338184627832555, guid: b22fac63d85daa64aadfbbdc2f581fb8, type: 3}
+  - {fileID: -1370914205700103537, guid: 261ce10bc00748545aab63d6d24f0505, type: 3}
+  spawnDelayInSeconds: 1
+  ingredientSpawnerGroup: {fileID: 2759097315404769494}

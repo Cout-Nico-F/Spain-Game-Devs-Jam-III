@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stateVisual: {fileID: 625398153884201584}
-  _state: {fileID: 0}
+  _state: {fileID: -8893068755589375446, guid: e47f687a59db64142ac553bbd448acd2, type: 3}
   images:
   - {fileID: -5583259190964981018, guid: 82ca1cffc21fbb74ebf8a8539e46b4cf, type: 3}
   - {fileID: -5510580640832241291, guid: 82ca1cffc21fbb74ebf8a8539e46b4cf, type: 3}
