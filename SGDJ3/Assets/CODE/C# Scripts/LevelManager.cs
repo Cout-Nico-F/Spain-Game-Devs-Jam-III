@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
     private int maxHealth = 6;
 
     private bool hasPotion;
+    private bool isLevelFinish;
 
     public bool IsAnimationFinish;
 
@@ -30,10 +31,13 @@ public class LevelManager : MonoBehaviour
     public int Health { get => health; }
     public bool HasPotion { get => hasPotion; set => hasPotion = value; }
 
+    public bool IsLevelFinish { get => isLevelFinish; set => isLevelFinish = value; }
+
     private void Awake()
     {
         health = maxHealth;
         hasPotion = false;
+        isLevelFinish = false;
         _levelStars = levelComplete_ui.transform.Find("Stars").GetComponent<LevelStars>();
     }
 
@@ -44,6 +48,7 @@ public class LevelManager : MonoBehaviour
         
         if (friendCount >= LevelObjective)
         {
+            isLevelFinish = true;
             StartCoroutine(LevelCompleted());
         }
         else
@@ -61,6 +66,7 @@ public class LevelManager : MonoBehaviour
         //UiManager.RefreshUI();
         if (health < 1)
         {
+            isLevelFinish = true;
             StartCoroutine(LevelOver());
         }
 

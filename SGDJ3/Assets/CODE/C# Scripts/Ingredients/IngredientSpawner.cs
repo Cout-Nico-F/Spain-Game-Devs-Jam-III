@@ -41,7 +41,7 @@ public class IngredientSpawner : MonoBehaviour
         }
         else
         {
-            if (!levelManager.HasPotion)
+            if (!levelManager.HasPotion && !levelManager.IsLevelFinish)
             {
                 Spawn();
             }
