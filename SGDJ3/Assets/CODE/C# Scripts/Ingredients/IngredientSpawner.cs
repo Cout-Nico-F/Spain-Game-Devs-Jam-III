@@ -53,8 +53,7 @@ public class IngredientSpawner : MonoBehaviour
         //TODO: restricciones de spawn (ejemplo no spawn donde ya hay otro ingrediente )
         //spawnear
         var ingredient = Instantiate(ChooseIngredient(), ChoosePosition(), Quaternion.identity, ingredientSpawnerGroup);
-        ingredient.GetComponent<Blink>().StartBlink(3.1f, 2f);
-
+        //movi el blink hacia el ingrediente.
         //resetear timer de cooldown
         float randomness = Random.Range(0,0.65f);
         timeRemaining = spawnDelayInSeconds + randomness ;

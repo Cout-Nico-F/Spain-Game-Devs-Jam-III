@@ -6,7 +6,7 @@ public class Ingredient : MonoBehaviour
     private bool isPressed;
     private float timeRemaining;
 
-    private  float timeLife = 3.1f; //Tiempo que duran los ingredientes antes de desaparecer
+    private  float timeLife = 5.1f; //Tiempo que duran los ingredientes antes de desaparecer
 
     private void Awake()
     {
@@ -16,12 +16,20 @@ public class Ingredient : MonoBehaviour
 
     private void Update()
     {
+        Color color = this.GetComponent<SpriteRenderer>().color;
+
         if (isPressed)
         {
+            color.a = 1;
+            this.GetComponent<SpriteRenderer>().color = color;
             return;
         }
         else
         {
+            if (timeRemaining < 2.11f)
+            {
+                this.GetComponent<Blink>().StartBlink(2.1f, 6.3f);
+            }
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
