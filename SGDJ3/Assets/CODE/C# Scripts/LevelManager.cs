@@ -61,7 +61,7 @@ public class LevelManager : MonoBehaviour
         //UiManager.RefreshUI();
         if (health < 1)
         {
-            LevelOver();
+            StartCoroutine(LevelOver());
         }
 
     }
@@ -72,15 +72,22 @@ public class LevelManager : MonoBehaviour
         {
             yield return null;
         }
-        
+
+        yield return new WaitForSecondsRealtime(2);
+
         Debug.Log("WIN");
         levelComplete_ui.SetActive(true);
         _levelStars.SetStars(Mathf.FloorToInt(health/2f));
     }
 
-    private void LevelOver()
+    private IEnumerator LevelOver()
     {
-        Debug.Log("LevelOver");
+        while (!IsAnimationFinish)
+        {
+            yield return null;
+        }
+
+        yield return new WaitForSecondsRealtime(2);
         levelOver_ui.SetActive(true);
 
     }
