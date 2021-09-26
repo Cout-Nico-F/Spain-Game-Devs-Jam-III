@@ -16,7 +16,7 @@ public class CraftSystem : Singleton<CraftSystem>
     }
     public Recipe MixIngredients(string ingredient1, string ingredient2)
     {
-        craft_anim.Play("PotCrafting");
+        craft_anim.SetTrigger("BubbleUp");
         //GameManager.Instance.WaitForSecondsCoroutine(2);
 
         if (ingredient1.Equals( ingredient2 ))
