@@ -13,6 +13,8 @@ public class UiManager : Singleton<UiManager>
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button backToMenuButton;
 
+    private bool isObjectivesPanelActive;
+    public bool IsObjectivesPanelActive => isObjectivesPanelActive;
 
     private void Start()
     {
@@ -28,6 +30,7 @@ public class UiManager : Singleton<UiManager>
         _canvasGroup.alpha = 1;
         Time.timeScale = 0;
         objectivesPanel.SetActive(true);
+        isObjectivesPanelActive = true;
     }
 
     public void HideObjectives()
@@ -74,5 +77,6 @@ public class UiManager : Singleton<UiManager>
         }
         
         objectivesPanel.SetActive(false);
+        isObjectivesPanelActive = false;
     }
 }

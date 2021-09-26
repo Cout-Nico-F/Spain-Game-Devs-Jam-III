@@ -50,6 +50,8 @@ public class GameManager : Singleton<GameManager>
     
     public void Pause()
     {
+        if (UiManager.Instance.IsObjectivesPanelActive) return;
+        
         if (!isPaused)
         {
             Time.timeScale = 0;
