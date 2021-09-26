@@ -6,11 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     private bool isPaused;
-    [SerializeField]
-    private Texture2D pressedCursor;
-    [SerializeField]
-    private Texture2D defaultCursor;
-
+    private CursorMove cursor;
     private List<string> _partyInvitations;
 
     public List<string> PartyInvitations { get => _partyInvitations; set => _partyInvitations = value; }
@@ -19,25 +15,30 @@ public class GameManager : Singleton<GameManager>
     {
         DontDestroyOnLoad(gameObject);
         _partyInvitations = new List<string>();
+        cursor = null;
         ToMainMenu();
     }
 
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) )
+        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) && SceneManager.GetActiveScene().name.StartsWith("Level"))
         {
             Pause();
         }
 
         if (Input.GetMouseButtonDown(0))
         {
-            Cursor.SetCursor(pressedCursor, new Vector2(16, 16), CursorMode.Auto);
+            if (cursor == null) cursor = GameObject.FindWithTag("Cursor").GetComponent<CursorMove>();
+            
+            cursor.SetCursorPressed();
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            Cursor.SetCursor(defaultCursor, new Vector2(16,16), CursorMode.Auto);
+            if (cursor == null) cursor = GameObject.FindWithTag("Cursor").GetComponent<CursorMove>();
+            
+            cursor.SetCursorDefault();
         }
     }
 
