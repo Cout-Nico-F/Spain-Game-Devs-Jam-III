@@ -11,6 +11,7 @@ public class Npc : MonoBehaviour
     [SerializeField] private string[] colors;
     [SerializeField] private GameObject poofPotionOKPrefab;
     [SerializeField] private GameObject poofPotionFailPrefab;
+    [SerializeField] private GameObject poofPotionSwitchPrefab;
     private Transform effectSpawnPoint;
     private Animator poofAnimator;
     private Dictionary<string, Sprite> dict;
@@ -86,8 +87,7 @@ public class Npc : MonoBehaviour
             else
             {
                 PotionFailEffect();
-                
-                Debug.Log("Exploding recipe.");
+                //move npc to random position inside certain area.
             }
         }
     }
@@ -96,6 +96,13 @@ public class Npc : MonoBehaviour
     private void PotionOKEffect()
     {
         var poof = Instantiate(poofPotionOKPrefab, effectSpawnPoint.position, Quaternion.identity);
+        poofAnimator = poof.GetComponent<Animator>();
+        StartCoroutine(FinishAnimation());
+        Destroy(poof, 2);
+    }
+    private void PotionSwitchEffect()
+    {
+        var poof = Instantiate(poofPotionSwitchPrefab, effectSpawnPoint.position, Quaternion.identity);
         poofAnimator = poof.GetComponent<Animator>();
         StartCoroutine(FinishAnimation());
         Destroy(poof, 2);
