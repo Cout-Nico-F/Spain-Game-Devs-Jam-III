@@ -12,6 +12,12 @@ public class MainMenu : MonoBehaviour
         _startGameButton.onClick.AddListener(StartGame);
         _creditsButton.onClick.AddListener(GoToCredits);
         _QuitGameButton.onClick.AddListener(QuitGame);
+
+    }
+
+    private void Start()
+    {
+        AudioSystem.Instance.Play("Main Menu");
     }
 
     private void GoToCredits()

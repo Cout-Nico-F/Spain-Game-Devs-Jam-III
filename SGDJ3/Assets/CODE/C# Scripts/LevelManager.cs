@@ -40,8 +40,13 @@ public class LevelManager : MonoBehaviour
         hasPotion = false;
         isLevelFinish = false;
         _levelStars = levelComplete_ui.transform.Find("Stars").GetComponent<LevelStars>();
+
     }
 
+    private void Start()
+    {
+        AudioSystem.Instance.Play("Gameplay");
+    }
     //Este metodo lo llamamos al detectar colision pocion-npc y comprobar que son del mismo color.
     public void FriendJoined()
     {
