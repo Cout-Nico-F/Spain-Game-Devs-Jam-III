@@ -70,7 +70,7 @@ public class Npc : MonoBehaviour
             // si colisiona con la pocion rosa cambia el estado del Npc a otro aleatorio
             if (collision.GetComponent<Potion>().color.Equals("pink"))
             {
-                PotionOKEffect();
+                PotionSwitchEffect();
                 _state.color = colors[Random.Range(0, 4)];
                 _stateVisual.sprite = dict[_state.color];
                 return;
@@ -78,7 +78,7 @@ public class Npc : MonoBehaviour
             
             if (collision.GetComponent<Potion>().color.Equals(_state.color))
             {
-                PotionSwitchEffect();
+                PotionOKEffect();
                 _stateVisual.sprite = images[Random.Range(4, 6)];
                 _levelManager.FriendJoined();
                 
@@ -98,21 +98,21 @@ public class Npc : MonoBehaviour
         var poof = Instantiate(poofPotionOKPrefab, effectSpawnPoint.position, Quaternion.identity);
         poofAnimator = poof.GetComponent<Animator>();
         StartCoroutine(FinishAnimation());
-        Destroy(poof, 2);
+        Destroy(poof, 2.1f);
     }
     private void PotionSwitchEffect()
     {
         var poof = Instantiate(poofPotionSwitchPrefab, effectSpawnPoint.position, Quaternion.identity);
         poofAnimator = poof.GetComponent<Animator>();
         StartCoroutine(FinishAnimation());
-        Destroy(poof, 2);
+        Destroy(poof, 2f);
     }
     
     
     private void PotionFailEffect()
     {
         var poof = Instantiate(poofPotionFailPrefab, effectSpawnPoint.position, Quaternion.identity);
-        Destroy(poof, 2);
+        Destroy(poof, 2f);
     }
     
     

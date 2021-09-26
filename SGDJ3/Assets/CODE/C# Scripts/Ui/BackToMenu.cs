@@ -8,4 +8,9 @@ public class BackToMenu : MonoBehaviour
     {
         GameManager.Instance.ToMainMenu();
     }
+
+    public void Pause()
+    {
+        GameManager.Instance.Pause();
+    }
 }
