@@ -14,7 +14,7 @@ public class Ingredient : MonoBehaviour
         timeRemaining = timeLife;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         Color color = this.GetComponent<SpriteRenderer>().color;
 
@@ -22,6 +22,14 @@ public class Ingredient : MonoBehaviour
         {
             color.a = 1;
             this.GetComponent<SpriteRenderer>().color = color;
+            return;
+        }
+    }
+
+    private void Update()
+    {
+        if (isPressed)
+        {
             return;
         }
         else
