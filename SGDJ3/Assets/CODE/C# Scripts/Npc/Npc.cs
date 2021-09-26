@@ -85,6 +85,7 @@ public class Npc : MonoBehaviour
                 PotionOKEffect();
                 _stateVisual.sprite = images[Random.Range(4, 6)];
                 GetComponent<Blink>().StartBlink(3f, 4f);
+                Destroy(gameObject, 3.5f);
                 _levelManager.FriendJoined();
                 
                 Debug.Log("Cured, he wants to join the party!");
