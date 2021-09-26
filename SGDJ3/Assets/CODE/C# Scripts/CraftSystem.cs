@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class CraftSystem : Singleton<CraftSystem>
 {
@@ -10,15 +11,15 @@ public class CraftSystem : Singleton<CraftSystem>
     [SerializeField] private GameObject boom_prefab;
     [SerializeField] private Animator craft_anim;
     private LevelManager levelManager;
+    private bool finishAnimation;
+    
     private void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
     }
+    
     public Recipe MixIngredients(string ingredient1, string ingredient2)
     {
-        craft_anim.SetTrigger("BubbleUp");
-        //GameManager.Instance.WaitForSecondsCoroutine(2);
-
         if (ingredient1.Equals( ingredient2 ))
         {
             return  OneIngredientMix(ingredient1);           
@@ -54,19 +55,13 @@ public class CraftSystem : Singleton<CraftSystem>
     {
         Destroy(ingredient1.gameObject);
         Destroy(ingredient2.gameObject);
-
-        // aqui se podria instanciar el efecto de crafteando y que la pocion esperase a que terminara para instanciarse
-        var poof1 = Instantiate(poof_prefab, ingredient2.transform.position, Quaternion.identity);
-        Destroy(poof1, 2);
-        var poof2 = Instantiate(poof_prefab, potionSpawnPoint.position, Quaternion.identity);
-        Destroy(poof2, 2);
-        Instantiate(potion, potionSpawnPoint.position, Quaternion.identity);
-
-        levelManager.HasPotion = true;
+        StartCoroutine(MixIngredientsOK(ingredient2.transform.position, potion));
     }
 
     public void WrongMix(Ingredient ingredient1, Ingredient ingredient2)
     {
+        craft_anim.SetTrigger("BubbleUp");
+
         var poof1 = Instantiate(poof_prefab, ingredient2.transform.position, Quaternion.identity);
         Destroy(poof1, 2);
         Destroy(ingredient1.gameObject);
@@ -78,6 +73,49 @@ public class CraftSystem : Singleton<CraftSystem>
         Destroy(smoke, 1.2f);
 
         GameObject.FindObjectOfType<LevelManager>().Damaged();
+    }
+
+
+    private IEnumerator MixIngredientsOK(Vector3 spawnPosition, Recipe potion)
+    {
+        //instanciamos el poof encima de los ingredientes
+        var poof1 = Instantiate(poof_prefab, spawnPosition, Quaternion.identity);
+        Destroy(poof1, 2);
+        
+        //esperamos a que acabe la animacion
+        finishAnimation = false;
+        StartCoroutine(WaitTime(1f));
+        while (!finishAnimation)
+        {
+            yield return null;
+        }
+
+        //arrancamos la animación de la olla
+        craft_anim.SetTrigger("BubbleUp");
+        
+        //esperamos a que acabe la animacion
+        finishAnimation = false;
+        StartCoroutine(WaitTime(1f));
+        while (!finishAnimation)
+        {
+            yield return null;
+        }
+        
+        //instanciamos el poof encima de la olla
+        var poof2 = Instantiate(poof_prefab, potionSpawnPoint.position, Quaternion.identity);
+        Destroy(poof2, 2);
+        
+        //instanciamos la pocion
+        Instantiate(potion, potionSpawnPoint.position, Quaternion.identity);
+        
+        levelManager.HasPotion = true;
+    }
+    
+    
+    private IEnumerator WaitTime(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        finishAnimation = true;
     }
 }
 
