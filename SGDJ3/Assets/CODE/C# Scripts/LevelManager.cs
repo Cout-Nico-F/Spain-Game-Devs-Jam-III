@@ -46,7 +46,7 @@ public class LevelManager : MonoBehaviour
     public void FriendJoined()
     {
         friendCount++;
-        //friends_ui.addFriend();
+        friends_ui.AddFriend();
         
         if (friendCount >= LevelObjective)
         {
