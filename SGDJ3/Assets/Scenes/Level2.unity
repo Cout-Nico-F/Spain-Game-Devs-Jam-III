@@ -1388,7 +1388,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 563606345}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1674794874}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: Retry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &563606345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1936,8 +1948,8 @@ RectTransform:
   - {fileID: 631406542}
   - {fileID: 454659111}
   - {fileID: 287135185}
-  - {fileID: 1936099305}
   - {fileID: 1122284467}
+  - {fileID: 1936099305}
   m_Father: {fileID: 1872023878}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2410,7 +2422,7 @@ RectTransform:
   - {fileID: 291994219}
   - {fileID: 1863033977}
   m_Father: {fileID: 870563037}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
