@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     private int levelObjective;
 
     [SerializeField] private Health healthSystem;
-
+    [SerializeField] private FriendsUi friends_ui;
     private int friendCount;
 
     private int health;
@@ -24,6 +24,7 @@ public class LevelManager : MonoBehaviour
     private GameObject levelComplete_ui;
     [SerializeField]
     private GameObject levelOver_ui;
+
 
     private LevelStars _levelStars;
 
@@ -45,6 +46,7 @@ public class LevelManager : MonoBehaviour
     public void FriendJoined()
     {
         friendCount++;
+        //friends_ui.addFriend();
         
         if (friendCount >= LevelObjective)
         {
