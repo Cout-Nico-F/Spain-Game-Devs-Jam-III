@@ -60,19 +60,9 @@ public class CraftSystem : Singleton<CraftSystem>
 
     public void WrongMix(Ingredient ingredient1, Ingredient ingredient2)
     {
-        craft_anim.SetTrigger("BubbleUp");
-
-        var poof1 = Instantiate(poof_prefab, ingredient2.transform.position, Quaternion.identity);
-        Destroy(poof1, 2);
         Destroy(ingredient1.gameObject);
         Destroy(ingredient2.gameObject);
-
-        var explosion = Instantiate(boom_prefab, craft_anim.transform.position, Quaternion.identity);
-        Destroy(explosion, 1.1f);
-        var smoke = Instantiate(smoke_prefab, witchSprite.transform.position, Quaternion.identity);
-        Destroy(smoke, 1.2f);
-
-        GameObject.FindObjectOfType<LevelManager>().Damaged();
+        StartCoroutine((MixWrongIngredients(ingredient2.transform.position)));
     }
 
 
@@ -109,6 +99,43 @@ public class CraftSystem : Singleton<CraftSystem>
         Instantiate(potion, potionSpawnPoint.position, Quaternion.identity);
         
         levelManager.HasPotion = true;
+    }
+
+
+    private IEnumerator MixWrongIngredients(Vector3 spawnPosition)
+    {
+        //instanciamos el poof encima de los ingredientes
+        var poof1 = Instantiate(poof_prefab, spawnPosition, Quaternion.identity);
+        Destroy(poof1, 2);
+        
+        //esperamos a que acabe la animacion
+        finishAnimation = false;
+        StartCoroutine(WaitTime(1f));
+        while (!finishAnimation)
+        {
+            yield return null;
+        }
+        
+        //arrancamos la animación de la olla
+        craft_anim.SetTrigger("BubbleUp");
+        
+        //esperamos a que acabe la animacion
+        finishAnimation = false;
+        StartCoroutine(WaitTime(1f));
+        while (!finishAnimation)
+        {
+            yield return null;
+        }
+        
+        //instanciamos la explosion
+        var explosion = Instantiate(boom_prefab, craft_anim.transform.position, Quaternion.identity);
+        Destroy(explosion, 1.1f);
+        
+        //instanciamos la brujita quemada
+        var smoke = Instantiate(smoke_prefab, witchSprite.transform.position, Quaternion.identity);
+        Destroy(smoke, 1.2f);
+        
+        FindObjectOfType<LevelManager>().Damaged();
     }
     
     
