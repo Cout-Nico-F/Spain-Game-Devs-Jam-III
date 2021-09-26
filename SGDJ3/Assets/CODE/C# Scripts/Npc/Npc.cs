@@ -75,6 +75,7 @@ public class Npc : MonoBehaviour
                 PotionSwitchEffect();
                 _state.color = colors[Random.Range(0, 4)];
                 _stateVisual.sprite = dict[_state.color];
+                GetComponent<Blink>().StartBlink(3f, 4f);
                 return;
             }
             
@@ -83,6 +84,7 @@ public class Npc : MonoBehaviour
                 GameManager.Instance.InviteToParty(npcId);
                 PotionOKEffect();
                 _stateVisual.sprite = images[Random.Range(4, 6)];
+                GetComponent<Blink>().StartBlink(3f, 4f);
                 _levelManager.FriendJoined();
                 
                 Debug.Log("Cured, he wants to join the party!");
@@ -90,6 +92,7 @@ public class Npc : MonoBehaviour
             else
             {
                 PotionFailEffect();
+                GetComponent<Blink>().StartBlink(3f, 4f);
                 //move npc to random position inside certain area.
             }
         }
@@ -103,6 +106,8 @@ public class Npc : MonoBehaviour
         StartCoroutine(FinishAnimation());
         Destroy(poof, 2.1f);
     }
+    
+    
     private void PotionSwitchEffect()
     {
         var poof = Instantiate(poofPotionSwitchPrefab, effectSpawnPoint.position, Quaternion.identity);

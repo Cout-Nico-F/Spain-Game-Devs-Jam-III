@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 2118938051354636437}
   - component: {fileID: 2118938051354636436}
   - component: {fileID: 3732934126825408021}
+  - component: {fileID: -5643212917931589577}
   m_Layer: 0
   m_Name: npc_1
   m_TagString: Untagged
@@ -193,6 +194,18 @@ MonoBehaviour:
   poofPotionFailPrefab: {fileID: 3036672447810044762, guid: 374d410b6a735d24991b001ca0dbf56c, type: 3}
   poofPotionSwitchPrefab: {fileID: 3036672447810044762, guid: 02fa9373d8949c344a36f99b000d39ba, type: 3}
   npcId: 1
+--- !u!114 &-5643212917931589577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6025893059279926148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c23c5c12256784a8148a96657b24d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9024794367330042245
 GameObject:
   m_ObjectHideFlags: 0
