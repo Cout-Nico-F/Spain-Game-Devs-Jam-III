@@ -58,6 +58,8 @@ public class GameManager : Singleton<GameManager>
     
     public void Pause()
     {
+        AudioSystem.Instance.Play("Boton");
+
         if (UiManager.Instance.IsObjectivesPanelActive) return;
         
         if (!isPaused)

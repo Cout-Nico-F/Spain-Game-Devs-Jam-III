@@ -12,7 +12,7 @@ public class PartyNpc : MonoBehaviour
     {
         if (HasInvitation())
         {
-            this.gameObject.SetActive(true);
+            GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 
