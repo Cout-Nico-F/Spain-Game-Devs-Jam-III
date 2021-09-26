@@ -520,17 +520,17 @@ MonoBehaviour:
     volume: 0.773
     loop: 0
     playOnAwake: 1
-  - name: Gameplay
+  - name: Level Won
     soundFX: 0
-    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
-    volume: 0.633
-    loop: 1
+    clip: {fileID: 8300000, guid: 79955824db17c5b45a31c5fc29538348, type: 3}
+    volume: 0.773
+    loop: 0
     playOnAwake: 1
-  - name: Gameplay
+  - name: Level Lost
     soundFX: 0
-    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
-    volume: 0.633
-    loop: 1
+    clip: {fileID: 8300000, guid: 005748126b011fc4bb0cffade25cab8e, type: 3}
+    volume: 0.773
+    loop: 0
     playOnAwake: 1
   - name: Gameplay
     soundFX: 0

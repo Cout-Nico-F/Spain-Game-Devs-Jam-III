@@ -74,6 +74,7 @@ public class LevelManager : MonoBehaviour
         if (health < 1)
         {
             isLevelFinish = true;
+            AudioSystem.Instance.Play("Level Lost");
             StartCoroutine(LevelOver());
         }
 
@@ -89,6 +90,7 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(2);
 
         Debug.Log("WIN");
+        AudioSystem.Instance.Play("Level Won");
         levelComplete_ui.SetActive(true);
         _levelStars.SetStars(Mathf.FloorToInt(health/2f));
     }
