@@ -11,13 +11,13 @@ public class UiManager : Singleton<UiManager>
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private Button continueButton;
     [SerializeField] private Button resumeButton;
-    [SerializeField] private Button quitButton;
+    [SerializeField] private Button backToMenuButton;
 
 
     private void Start()
     {
         resumeButton.onClick.AddListener(Resume);
-        quitButton.onClick.AddListener(Quit);
+        backToMenuButton.onClick.AddListener(BackToMenu);
         continueButton.onClick.AddListener(Continue);
         ShowObjectives();
     }
@@ -33,7 +33,7 @@ public class UiManager : Singleton<UiManager>
     public void HideObjectives()
     {
         Time.timeScale = 1;
-        StartCoroutine(DoFade(2f));
+        StartCoroutine(DoFade(1.5f));
     }
     
     private void Continue()
@@ -41,7 +41,7 @@ public class UiManager : Singleton<UiManager>
         HideObjectives();
     }
 
-    private void Quit()
+    private void BackToMenu()
     {
         GameManager.Instance.ToMainMenu();
     }

@@ -1293,19 +1293,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 567496069}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 567496072}
-        m_TargetAssemblyTypeName: BackToMenu, Assembly-CSharp
-        m_MethodName: BackToMainMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &567496069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3667,11 +3655,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 631406539}
-  objectivesPanel: {fileID: 0}
-  _canvasGroup: {fileID: 0}
-  continueButton: {fileID: 0}
+  objectivesPanel: {fileID: 1114109016}
+  _canvasGroup: {fileID: 1114109018}
+  continueButton: {fileID: 1574654608}
   resumeButton: {fileID: 2068129530}
-  quitButton: {fileID: 567496068}
+  backToMenuButton: {fileID: 567496068}
 --- !u!4 &1872023878
 Transform:
   m_ObjectHideFlags: 0
@@ -4154,19 +4142,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2068129528}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2068129531}
-        m_TargetAssemblyTypeName: BackToMenu, Assembly-CSharp
-        m_MethodName: Pause
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2068129531
 MonoBehaviour:
   m_ObjectHideFlags: 0
