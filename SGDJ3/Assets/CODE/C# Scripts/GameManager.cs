@@ -13,6 +13,7 @@ public class GameManager : Singleton<GameManager>
 
     private List<string> _partyInvitations;
 
+    public List<string> PartyInvitations { get => _partyInvitations; set => _partyInvitations = value; }
 
     private void Start()
     {
