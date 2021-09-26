@@ -74,7 +74,7 @@ public class CraftSystem : Singleton<CraftSystem>
         
         //esperamos a que acabe la animacion
         finishAnimation = false;
-        StartCoroutine(WaitTime(1f));
+        StartCoroutine(WaitTime(0.2f));
         while (!finishAnimation)
         {
             yield return null;
@@ -110,7 +110,7 @@ public class CraftSystem : Singleton<CraftSystem>
         
         //esperamos a que acabe la animacion
         finishAnimation = false;
-        StartCoroutine(WaitTime(1f));
+        StartCoroutine(WaitTime(0.2f));
         while (!finishAnimation)
         {
             yield return null;
