@@ -3958,7 +3958,7 @@ MonoBehaviour:
   pausePanel: {fileID: 631406539}
   objectivesPanel: {fileID: 1114109016}
   _canvasGroup: {fileID: 1114109018}
-  continueButton: {fileID: 0}
+  continueButton: {fileID: 1046779695}
   resumeButton: {fileID: 2068129530}
   backToMenuButton: {fileID: 567496068}
 --- !u!4 &1872023878
