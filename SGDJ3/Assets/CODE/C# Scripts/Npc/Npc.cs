@@ -75,7 +75,6 @@ public class Npc : MonoBehaviour
                 PotionSwitchEffect();
                 _state.color = colors[Random.Range(0, 4)];
                 _stateVisual.sprite = dict[_state.color];
-                GetComponent<Blink>().StartBlink(3f, 4f);
                 return;
             }
             
