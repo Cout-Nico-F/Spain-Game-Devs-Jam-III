@@ -9,4 +9,9 @@ public class PartyMusic : MonoBehaviour
     {
         //AudioSystem.Instance.Play("Party Music");
     }
+
+    public void Credits()
+    {
+        GameManager.Instance.GoToCredits();
+    }
 }
