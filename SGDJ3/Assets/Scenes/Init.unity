@@ -524,13 +524,13 @@ MonoBehaviour:
     soundFX: 0
     clip: {fileID: 8300000, guid: 79955824db17c5b45a31c5fc29538348, type: 3}
     volume: 0.773
-    loop: 1
+    loop: 0
     playOnAwake: 1
   - name: Level Lost
     soundFX: 0
     clip: {fileID: 8300000, guid: 005748126b011fc4bb0cffade25cab8e, type: 3}
     volume: 0.773
-    loop: 1
+    loop: 0
     playOnAwake: 1
   - name: Party
     soundFX: 0
