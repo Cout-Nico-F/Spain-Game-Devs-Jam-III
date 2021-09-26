@@ -126,11 +126,7 @@ public class CraftSystem : Singleton<CraftSystem>
         //arrancamos la animación de la olla
 
         AudioSystem.Instance.Play("Olla Burbujeando");
-        
-        craft_anim.SetTrigger("BubbleUp");
-        StartCoroutine(WaitTime(0.6f));
-        craft_anim.SetTrigger("BubbleUp");
-        StartCoroutine(WaitTime(0.6f));
+       
         craft_anim.SetTrigger("BubbleUp");
 
         //esperamos a que acabe la animacion
