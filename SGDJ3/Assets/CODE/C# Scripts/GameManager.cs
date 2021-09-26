@@ -91,10 +91,5 @@ public class GameManager : Singleton<GameManager>
     public void InviteToParty(string npcId)
     {
         _partyInvitations.Add(npcId);
-
-        foreach (var npc in _partyInvitations)
-        {
-            Debug.Log(npc);
-        }
     }
 }
