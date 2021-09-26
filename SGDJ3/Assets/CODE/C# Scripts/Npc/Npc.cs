@@ -80,6 +80,7 @@ public class Npc : MonoBehaviour
             
             if (collision.GetComponent<Potion>().color.Equals(_state.color))
             {
+                GameManager.Instance.PrartyInvitations[GameManager.Instance.PrartyInvitations.Length] = npcId;
                 PotionOKEffect();
                 _stateVisual.sprite = images[Random.Range(4, 6)];
                 _levelManager.FriendJoined();
@@ -97,8 +98,6 @@ public class Npc : MonoBehaviour
     
     private void PotionOKEffect()
     {
-        GameManager.Instance.PrartyInvitations[GameManager.Instance.PrartyInvitations.Length] = npcId;
-
         var poof = Instantiate(poofPotionOKPrefab, effectSpawnPoint.position, Quaternion.identity);
         poofAnimator = poof.GetComponent<Animator>();
         StartCoroutine(FinishAnimation());
