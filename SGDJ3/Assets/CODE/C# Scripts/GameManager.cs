@@ -10,6 +10,10 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private Texture2D defaultCursor;
 
+    private string[] prartyInvitations;
+
+    public string[] PrartyInvitations { get => prartyInvitations; set => prartyInvitations = value; }
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);

@@ -19,6 +19,8 @@ public class Npc : MonoBehaviour
     private LevelManager _levelManager;
     private float timer;
     private float timerReset = 3;
+    [SerializeField]
+    private string npcId;
 
 
     private void Awake()
@@ -95,6 +97,8 @@ public class Npc : MonoBehaviour
     
     private void PotionOKEffect()
     {
+        GameManager.Instance.PrartyInvitations[GameManager.Instance.PrartyInvitations.Length] = npcId;
+
         var poof = Instantiate(poofPotionOKPrefab, effectSpawnPoint.position, Quaternion.identity);
         poofAnimator = poof.GetComponent<Animator>();
         StartCoroutine(FinishAnimation());
