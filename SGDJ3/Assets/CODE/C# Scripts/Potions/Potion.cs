@@ -55,6 +55,8 @@ public class Potion : MonoBehaviour
         rb.isKinematic = false;
         StartCoroutine(Release());
         levelManager.HasPotion = false;
+
+        AudioSystem.Instance.Play("Lanzar Pocion");
     }
 
     IEnumerator Release()

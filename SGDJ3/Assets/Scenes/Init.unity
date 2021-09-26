@@ -442,6 +442,168 @@ MonoBehaviour:
     volume: 0.633
     loop: 1
     playOnAwake: 1
+  - name: Ingredient Spawn
+    soundFX: 1
+    clip: {fileID: 8300000, guid: ee436b116a3eea84eae9add7e7ea83cb, type: 3}
+    volume: 0.773
+    loop: 0
+    playOnAwake: 1
+  - name: Boton Aceptar
+    soundFX: 1
+    clip: {fileID: 8300000, guid: 9b21e373c48ffc042bc7bce94a170294, type: 3}
+    volume: 0.633
+    loop: 0
+    playOnAwake: 1
+  - name: Agarrar Tirachinas
+    soundFX: 1
+    clip: {fileID: 8300000, guid: 75cc90901df28654eaceeffebb619411, type: 3}
+    volume: 0.633
+    loop: 0
+    playOnAwake: 1
+  - name: Potion Spawn
+    soundFX: 1
+    clip: {fileID: 8300000, guid: b2ca7453e50cdf34dbef4af0842a23b0, type: 3}
+    volume: 0.633
+    loop: 0
+    playOnAwake: 1
+  - name: Boton
+    soundFX: 1
+    clip: {fileID: 8300000, guid: b320befa30b29084caedc024c7a85a37, type: 3}
+    volume: 0.633
+    loop: 0
+    playOnAwake: 1
+  - name: Explosion
+    soundFX: 1
+    clip: {fileID: 8300000, guid: 2a296548bf1d9b246b47a8c5f0a70674, type: 3}
+    volume: 0.633
+    loop: 0
+    playOnAwake: 1
+  - name: Impacto Bueno
+    soundFX: 1
+    clip: {fileID: 8300000, guid: 93367d9411ad8734493b1a86303530b3, type: 3}
+    volume: 0.633
+    loop: 0
+    playOnAwake: 1
+  - name: Impacto Especial
+    soundFX: 1
+    clip: {fileID: 8300000, guid: 24c366a4822a99e4e8b07685dbe9dd2e, type: 3}
+    volume: 0.633
+    loop: 0
+    playOnAwake: 1
+  - name: Impacto Malo
+    soundFX: 1
+    clip: {fileID: 8300000, guid: c23f8e5e6bccea6469bab2634740ae6a, type: 3}
+    volume: 0.633
+    loop: 0
+    playOnAwake: 1
+  - name: Ingrediente Mezclado
+    soundFX: 1
+    clip: {fileID: 8300000, guid: b701955d3a297f04b9650fe4ca196043, type: 3}
+    volume: 0.633
+    loop: 0
+    playOnAwake: 1
+  - name: Ingrediente Pinchado
+    soundFX: 1
+    clip: {fileID: 8300000, guid: 5ca1b786e02f17d479f2623d41e51b23, type: 3}
+    volume: 0.633
+    loop: 0
+    playOnAwake: 1
+  - name: Lanzar Pocion
+    soundFX: 1
+    clip: {fileID: 8300000, guid: 83ecbffec74e49444b3d5ca86d594bf8, type: 3}
+    volume: 0.633
+    loop: 0
+    playOnAwake: 1
+  - name: Olla Burbujeando
+    soundFX: 1
+    clip: {fileID: 8300000, guid: b648d265b0c07c4459fb161c9a228a86, type: 3}
+    volume: 0.633
+    loop: 0
+    playOnAwake: 1
+  - name: Gameplay
+    soundFX: 0
+    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
+    volume: 0.633
+    loop: 1
+    playOnAwake: 1
+  - name: Gameplay
+    soundFX: 0
+    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
+    volume: 0.633
+    loop: 1
+    playOnAwake: 1
+  - name: Gameplay
+    soundFX: 0
+    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
+    volume: 0.633
+    loop: 1
+    playOnAwake: 1
+  - name: Gameplay
+    soundFX: 0
+    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
+    volume: 0.633
+    loop: 1
+    playOnAwake: 1
+  - name: Gameplay
+    soundFX: 0
+    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
+    volume: 0.633
+    loop: 1
+    playOnAwake: 1
+  - name: Gameplay
+    soundFX: 0
+    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
+    volume: 0.633
+    loop: 1
+    playOnAwake: 1
+  - name: Gameplay
+    soundFX: 0
+    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
+    volume: 0.633
+    loop: 1
+    playOnAwake: 1
+  - name: Gameplay
+    soundFX: 0
+    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
+    volume: 0.633
+    loop: 1
+    playOnAwake: 1
+  - name: Gameplay
+    soundFX: 0
+    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
+    volume: 0.633
+    loop: 1
+    playOnAwake: 1
+  - name: Gameplay
+    soundFX: 0
+    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
+    volume: 0.633
+    loop: 1
+    playOnAwake: 1
+  - name: Gameplay
+    soundFX: 0
+    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
+    volume: 0.633
+    loop: 1
+    playOnAwake: 1
+  - name: Gameplay
+    soundFX: 0
+    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
+    volume: 0.633
+    loop: 1
+    playOnAwake: 1
+  - name: Gameplay
+    soundFX: 0
+    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
+    volume: 0.633
+    loop: 1
+    playOnAwake: 1
+  - name: Gameplay
+    soundFX: 0
+    clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
+    volume: 0.633
+    loop: 1
+    playOnAwake: 1
   mainMusic: {fileID: 280495005}
   soundFX: {fileID: 271145245}
 --- !u!81 &1068208122

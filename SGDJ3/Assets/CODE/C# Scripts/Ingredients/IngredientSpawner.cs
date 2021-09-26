@@ -52,6 +52,9 @@ public class IngredientSpawner : MonoBehaviour
     {
         //TODO: restricciones de spawn (ejemplo no spawn donde ya hay otro ingrediente )
         //spawnear
+
+        AudioSystem.Instance.Play("Ingredient Spawn");
+
         var ingredient = Instantiate(ChooseIngredient(), ChoosePosition(), Quaternion.identity, ingredientSpawnerGroup);
         //movi el blink hacia el ingrediente.
         //resetear timer de cooldown

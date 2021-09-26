@@ -22,6 +22,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
+        AudioSystem.Instance.Play("Ingrediente Pinchado");
         var mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
         offset = myTransform.position - mousePosition;
         _renderer.sortingOrder = 100;

@@ -69,6 +69,9 @@ public class CraftSystem : Singleton<CraftSystem>
     private IEnumerator MixIngredientsOK(Vector3 spawnPosition, Recipe potion)
     {
         //instanciamos el poof encima de los ingredientes
+        AudioSystem.Instance.Play("Ingrediente Mezclado");
+
+
         var poof1 = Instantiate(poof_prefab, spawnPosition, Quaternion.identity);
         Destroy(poof1, 2);
         
@@ -82,7 +85,8 @@ public class CraftSystem : Singleton<CraftSystem>
 
         //arrancamos la animación de la olla
         craft_anim.SetTrigger("BubbleUp");
-        
+        AudioSystem.Instance.Play("Olla Burbujeando");
+
         //esperamos a que acabe la animacion
         finishAnimation = false;
         StartCoroutine(WaitTime(1f));
@@ -94,7 +98,8 @@ public class CraftSystem : Singleton<CraftSystem>
         //instanciamos el poof encima de la olla
         var poof2 = Instantiate(poof_prefab, potionSpawnPoint.position, Quaternion.identity);
         Destroy(poof2, 2);
-        
+
+        AudioSystem.Instance.Play("Potion Spawn");
         //instanciamos la pocion
         Instantiate(potion, potionSpawnPoint.position, Quaternion.identity);
         
@@ -105,6 +110,8 @@ public class CraftSystem : Singleton<CraftSystem>
     private IEnumerator MixWrongIngredients(Vector3 spawnPosition)
     {
         //instanciamos el poof encima de los ingredientes
+        AudioSystem.Instance.Play("Ingrediente Mezclado");
+
         var poof1 = Instantiate(poof_prefab, spawnPosition, Quaternion.identity);
         Destroy(poof1, 2);
         
@@ -115,10 +122,17 @@ public class CraftSystem : Singleton<CraftSystem>
         {
             yield return null;
         }
-        
+
         //arrancamos la animación de la olla
-        craft_anim.SetTrigger("BubbleUp");
+
+        AudioSystem.Instance.Play("Olla Burbujeando");
         
+        craft_anim.SetTrigger("BubbleUp");
+        StartCoroutine(WaitTime(0.6f));
+        craft_anim.SetTrigger("BubbleUp");
+        StartCoroutine(WaitTime(0.6f));
+        craft_anim.SetTrigger("BubbleUp");
+
         //esperamos a que acabe la animacion
         finishAnimation = false;
         StartCoroutine(WaitTime(1f));
@@ -126,8 +140,11 @@ public class CraftSystem : Singleton<CraftSystem>
         {
             yield return null;
         }
-        
+
         //instanciamos la explosion
+
+        AudioSystem.Instance.Play("Explosion");
+
         var explosion = Instantiate(boom_prefab, craft_anim.transform.position, Quaternion.identity);
         Destroy(explosion, 1.1f);
         
