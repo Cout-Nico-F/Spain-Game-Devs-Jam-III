@@ -12,6 +12,8 @@ public class Npc : MonoBehaviour
     [SerializeField] private GameObject poofPotionOKPrefab;
     [SerializeField] private GameObject poofPotionFailPrefab;
     [SerializeField] private GameObject poofPotionSwitchPrefab;
+    [SerializeField] private string npcId;
+    
     private Transform effectSpawnPoint;
     private Animator poofAnimator;
     private Dictionary<string, Sprite> dict;
@@ -19,9 +21,7 @@ public class Npc : MonoBehaviour
     private LevelManager _levelManager;
     private float timer;
     private float timerReset = 3;
-    [SerializeField]
-    private string npcId;
-
+    
 
     private void Awake()
     {
@@ -80,7 +80,7 @@ public class Npc : MonoBehaviour
             
             if (collision.GetComponent<Potion>().color.Equals(_state.color))
             {
-                GameManager.Instance.PrartyInvitations[GameManager.Instance.PrartyInvitations.Length] = npcId;
+                GameManager.Instance.InviteToParty(npcId);
                 PotionOKEffect();
                 _stateVisual.sprite = images[Random.Range(4, 6)];
                 _levelManager.FriendJoined();

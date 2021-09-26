@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,13 +11,13 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private Texture2D defaultCursor;
 
-    private string[] prartyInvitations;
+    private List<string> _partyInvitations;
 
-    public string[] PrartyInvitations { get => prartyInvitations; set => prartyInvitations = value; }
 
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+        _partyInvitations = new List<string>();
         ToMainMenu();
     }
 
@@ -85,5 +86,15 @@ public class GameManager : Singleton<GameManager>
     public void GoToCredits()
     {
         SceneManager.LoadScene("Credits");
+    }
+
+    public void InviteToParty(string npcId)
+    {
+        _partyInvitations.Add(npcId);
+
+        foreach (var npc in _partyInvitations)
+        {
+            Debug.Log(npc);
+        }
     }
 }
