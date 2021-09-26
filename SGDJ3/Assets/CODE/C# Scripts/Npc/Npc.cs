@@ -76,7 +76,14 @@ public class Npc : MonoBehaviour
             {
                 AudioSystem.Instance.Play("Impacto Especial");
                 PotionSwitchEffect();
-                _state.color = colors[Random.Range(0, 4)];
+                var previousColor = _state.color;
+                var switchColor = colors[Random.Range(0, 4)];
+                while (switchColor.Equals(previousColor))
+                {
+                    switchColor = colors[Random.Range(0, 4)];
+                }
+
+                _state.color = switchColor;
                 _stateVisual.sprite = dict[_state.color];
                 return;
             }
