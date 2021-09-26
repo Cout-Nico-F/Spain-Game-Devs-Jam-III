@@ -2381,7 +2381,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1046779696}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1674794874}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: NextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1046779696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2934,7 +2946,7 @@ GameObject:
   - component: {fileID: 1467098446}
   - component: {fileID: 1467098445}
   m_Layer: 5
-  m_Name: ContinueButton (1)
+  m_Name: ContinueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4116,7 +4128,7 @@ MonoBehaviour:
   pausePanel: {fileID: 631406539}
   objectivesPanel: {fileID: 1122284466}
   _canvasGroup: {fileID: 1122284468}
-  continueButton: {fileID: 1046779695}
+  continueButton: {fileID: 1467098445}
   resumeButton: {fileID: 459109748}
   backToMenuButton: {fileID: 1666663775}
 --- !u!4 &1872023878
