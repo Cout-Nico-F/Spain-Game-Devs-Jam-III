@@ -14,6 +14,7 @@ public class Npc : MonoBehaviour
     [SerializeField] private GameObject poofPotionSwitchPrefab;
     [SerializeField] private string npcId;
     
+    private Transform npcSpawnPositions;
     private Transform effectSpawnPoint;
     private Animator poofAnimator;
     private Dictionary<string, Sprite> dict;
@@ -28,6 +29,7 @@ public class Npc : MonoBehaviour
         _levelManager = FindObjectOfType<LevelManager>();
         myRenderer = GetComponent<SpriteRenderer>();
         effectSpawnPoint = transform.Find("effectSpawnPoint");
+        npcSpawnPositions = GameObject.FindWithTag("NpcSpawnPoints").transform;
         timer = timerReset + Random.Range(0,3);
 
         dict = new Dictionary<string, Sprite>();
@@ -93,12 +95,19 @@ public class Npc : MonoBehaviour
             {
                 PotionFailEffect();
                 GetComponent<Blink>().StartBlink(3f, 4f);
-                //move npc to random position inside certain area.
+                StartCoroutine(ChangeNpcPosition());
             }
         }
     }
 
-    
+    private IEnumerator ChangeNpcPosition()
+    {
+        yield return new WaitForSeconds(3f);
+        var index = Random.Range(0, npcSpawnPositions.childCount);
+        transform.position = npcSpawnPositions.GetChild(index).position;
+    }
+
+
     private void PotionOKEffect()
     {
         var poof = Instantiate(poofPotionOKPrefab, effectSpawnPoint.position, Quaternion.identity);
