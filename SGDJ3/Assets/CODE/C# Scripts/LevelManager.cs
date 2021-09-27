@@ -97,10 +97,12 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator LevelOver()
     {
+        /*
         while (!IsAnimationFinish)
         {
             yield return null;
         }
+        */
 
         yield return new WaitForSecondsRealtime(2);
         levelOver_ui.SetActive(true);
