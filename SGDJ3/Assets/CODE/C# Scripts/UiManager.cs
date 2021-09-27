@@ -41,6 +41,7 @@ public class UiManager : Singleton<UiManager>
     
     private void Continue()
     {
+        AudioSystem.Instance.Play("Boton Aceptar");
         HideObjectives();
     }
 
@@ -52,6 +53,7 @@ public class UiManager : Singleton<UiManager>
     
     private void Resume()
     {
+        AudioSystem.Instance.Play("Boton Aceptar");
         GameManager.Instance.Pause();
     }
 
