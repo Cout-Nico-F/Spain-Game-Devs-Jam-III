@@ -114,7 +114,11 @@ public class Npc : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         var index = Random.Range(0, npcSpawnPositions.childCount);
-        transform.position = npcSpawnPositions.GetChild(index).position;
+        var currentPosition = transform.position;
+        var switchPosition = npcSpawnPositions.GetChild(index).position;
+        
+        npcSpawnPositions.GetChild(index).position = currentPosition;
+        transform.position = switchPosition;
     }
 
 
