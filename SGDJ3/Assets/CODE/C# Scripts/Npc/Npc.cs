@@ -104,7 +104,7 @@ public class Npc : MonoBehaviour
             {
                 PotionFailEffect();
                 AudioSystem.Instance.Play("Impacto Malo");
-                GetComponent<Blink>().StartBlink(3f, 4f);
+                GetComponent<Blink>().StartBlink(3.1f, 4f);
                 StartCoroutine(ChangeNpcPosition());
             }
         }
