@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Potion : MonoBehaviour
@@ -14,6 +13,7 @@ public class Potion : MonoBehaviour
     private float maxDragDistance = 4f;
     private LevelManager levelManager;
     private Rigidbody2D knob_Rb;
+    private bool isPotionFlying;
 
 
     private void Awake()
@@ -45,15 +45,18 @@ public class Potion : MonoBehaviour
 
     private void OnMouseDown()
     {
-        AudioSystem.Instance.Play("Agarrar Tirachinas");
+        if (isPotionFlying) return;
 
+        AudioSystem.Instance.Play("Agarrar Tirachinas");
         isPressed = true;
+        isPotionFlying = false;
         rb.isKinematic = true;
     }
 
     private void OnMouseUp()
     {
-
+        isPotionFlying = true;
+        //AudioSystem.Instance.Play("Lanzar Pocion");
         isPressed = false;
         rb.isKinematic = false;
         StartCoroutine(Release());
@@ -62,10 +65,7 @@ public class Potion : MonoBehaviour
 
     IEnumerator Release()
     {
-        AudioSystem.Instance.Play("Lanzar Pocion");
-
         yield return new WaitForSeconds(releaseTime);
-
         GetComponent<SpringJoint2D>().enabled = false;
     }
 }
