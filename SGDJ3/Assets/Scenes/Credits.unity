@@ -193,8 +193,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Arte:  Caronila\r\n\nGame desing:  Todos participamos en este aspecto\r\n\nNarrativa
-    - Guion - Desing :  Cobra626 \u200B\u200B\r\n\nMusica / Sonido: Milo Giraldo\u200B\r\n\nProgramaci\xF3n:
+  m_Text: "Arte:  Caronila\r\n\nGame design:  Todos participamos en este aspecto\r\n\nNarrativa
+    - Guion - Design :  Cobra626 \u200B\u200B\r\n\nMusica / Sonido: Milo Giraldo\u200B\r\n\nProgramaci\xF3n:
     Cout Nico F y Jhcanti \r\n\nProductor: Cout Nico F"
 --- !u!222 &82174357
 CanvasRenderer:
