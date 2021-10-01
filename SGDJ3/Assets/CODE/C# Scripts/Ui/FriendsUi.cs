@@ -8,9 +8,7 @@ public class FriendsUi : MonoBehaviour
     private int friends;
 
     [SerializeField]
-    private Text text1;
-    [SerializeField]
-    private Text text2;
+    private Text scoreText;
     [SerializeField]
     private LevelManager levelManager;
 
@@ -21,13 +19,12 @@ public class FriendsUi : MonoBehaviour
 
     private void Start()
     {
-        text1.text = friends.ToString();
-        text2.text = levelManager.LevelObjective.ToString();
+        scoreText.text = friends + "/" + levelManager.LevelObjective;
     }
 
     public void AddFriend()
     {
         friends++;
-        text1.text = friends.ToString();
+        scoreText.text = friends + "/" + levelManager.LevelObjective;
     }
 }

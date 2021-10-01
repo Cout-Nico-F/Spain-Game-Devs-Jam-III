@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CraftSystem : Singleton<CraftSystem>
 {
     [SerializeField] private Recipe[] recipes;
     [SerializeField] private Transform potionSpawnPoint;
-    [SerializeField] private Transform witchSprite;
+    [SerializeField] private Sprite potExplode;
+    [SerializeField] private Sprite potIdle;
     [SerializeField] private GameObject poof_prefab;
-    [SerializeField] private GameObject smoke_prefab;
     [SerializeField] private GameObject boom_prefab;
     [SerializeField] private Animator craft_anim;
+    [SerializeField] private Image witchUi;
     private LevelManager levelManager;
     private bool finishAnimation;
     
@@ -144,9 +146,10 @@ public class CraftSystem : Singleton<CraftSystem>
         var explosion = Instantiate(boom_prefab, craft_anim.transform.position, Quaternion.identity);
         Destroy(explosion, 1.1f);
         
-        //instanciamos la brujita quemada
-        var smoke = Instantiate(smoke_prefab, witchSprite.transform.position, Quaternion.identity);
-        Destroy(smoke, 1.2f);
+        //cambiamos la imagen a la brujita quemada
+        witchUi.sprite = potExplode;
+        StartCoroutine(WaitTime(1.2f));
+        witchUi.sprite = potIdle;
         
         FindObjectOfType<LevelManager>().Damaged();
     }

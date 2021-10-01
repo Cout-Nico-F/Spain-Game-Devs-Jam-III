@@ -18,8 +18,6 @@ public class LevelManager : MonoBehaviour
     private bool hasPotion;
     private bool isLevelFinish;
 
-    public bool IsAnimationFinish;
-
     [SerializeField]
     private GameObject levelComplete_ui;
     [SerializeField]
@@ -58,10 +56,6 @@ public class LevelManager : MonoBehaviour
             isLevelFinish = true;
             StartCoroutine(LevelCompleted());
         }
-        else
-        {
-            IsAnimationFinish = false;
-        }
     }
 
     public void Damaged()
@@ -82,11 +76,6 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator LevelCompleted()
     {
-        while (!IsAnimationFinish)
-        {
-            yield return null;
-        }
-
         yield return new WaitForSecondsRealtime(2);
 
         Debug.Log("WIN");
@@ -97,16 +86,8 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator LevelOver()
     {
-        /*
-        while (!IsAnimationFinish)
-        {
-            yield return null;
-        }
-        */
-
         yield return new WaitForSecondsRealtime(2);
         levelOver_ui.SetActive(true);
-
     }
 
     public void Retry()

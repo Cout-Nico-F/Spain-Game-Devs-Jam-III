@@ -49,6 +49,9 @@ TagManager:
   - name: NPC
     uniqueID: 266845257
     locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Ingredientes
     uniqueID: 3825723459
     locked: 0
@@ -57,9 +60,6 @@ TagManager:
     locked: 0
   - name: Efectos
     uniqueID: 2997488419
-    locked: 0
-  - name: Default
-    uniqueID: 0
     locked: 0
   - name: Cursor
     uniqueID: 2272386499

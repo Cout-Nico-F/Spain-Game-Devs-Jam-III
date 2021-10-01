@@ -126,7 +126,6 @@ public class Npc : MonoBehaviour
     {
         var poof = Instantiate(poofPotionOKPrefab, effectSpawnPoint.position, Quaternion.identity);
         poofAnimator = poof.GetComponent<Animator>();
-        StartCoroutine(FinishAnimation());
         Destroy(poof, 2.1f);
     }
     
@@ -135,7 +134,6 @@ public class Npc : MonoBehaviour
     {
         var poof = Instantiate(poofPotionSwitchPrefab, effectSpawnPoint.position, Quaternion.identity);
         poofAnimator = poof.GetComponent<Animator>();
-        StartCoroutine(FinishAnimation());
         Destroy(poof, 2f);
     }
     
@@ -144,17 +142,6 @@ public class Npc : MonoBehaviour
     {
         var poof = Instantiate(poofPotionFailPrefab, effectSpawnPoint.position, Quaternion.identity);
         Destroy(poof, 2f);
-    }
-    
-    
-    private IEnumerator FinishAnimation()
-    {
-        while (poofAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
-        {
-            yield return null;
-        }
-        
-        _levelManager.IsAnimationFinish = true;
     }
     
 }

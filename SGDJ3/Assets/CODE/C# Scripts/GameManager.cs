@@ -86,7 +86,7 @@ public class GameManager : Singleton<GameManager>
     
     public void StartGame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Gameplay");
         isGamePlay = true;
     }
 

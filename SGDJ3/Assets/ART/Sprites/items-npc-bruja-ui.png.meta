@@ -100,7 +100,7 @@ TextureImporter:
     second: npc11
   - first:
       213: 3294322798542869477
-    second: items-npc-bruja-ui_32
+    second: pot
   - first:
       213: 3055767074874021442
     second: mouse_1
@@ -883,7 +883,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: items-npc-bruja-ui_32
+      name: pot
       rect:
         serializedVersion: 2
         x: 25

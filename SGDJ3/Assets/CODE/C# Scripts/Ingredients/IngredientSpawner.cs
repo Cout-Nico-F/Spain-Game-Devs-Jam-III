@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,13 +13,14 @@ public class IngredientSpawner : MonoBehaviour
     private List<Ingredient> ingredients;
     
     [SerializeField]
-    private float spawnDelayInSeconds = .1f;
-
+    private float spawnDelayInSeconds;
+    
     [SerializeField] private Transform ingredientSpawnerGroup;
+
     private List<Ingredient> ingredientPool;
     private float timeRemaining;
     private LevelManager levelManager;
-
+    private Vector3 ingredientPosition;
 
 
     private void Awake()
@@ -59,7 +59,7 @@ public class IngredientSpawner : MonoBehaviour
         //movi el blink hacia el ingrediente.
         //resetear timer de cooldown
         float randomness = Random.Range(0,0.65f);
-        timeRemaining = spawnDelayInSeconds + randomness ;
+        timeRemaining = spawnDelayInSeconds + randomness;
     }
 
     private Ingredient ChooseIngredient()
@@ -79,14 +79,41 @@ public class IngredientSpawner : MonoBehaviour
 
     private Vector3 ChoosePosition()
     {
-        //pick a position
-        Vector3 pos = new Vector3(Random.Range(boundsRect.rect.xMin, boundsRect.rect.xMax), Random.Range(boundsRect.rect.yMin, boundsRect.rect.yMax), 0);
+        // cogemos las 4 esquinas del SpawnZone
+        var corners = new Vector3[4];
+        boundsRect.GetWorldCorners(corners);
 
-        while (RectTransformUtility.RectangleContainsScreenPoint(noSpawnRect, pos))
+        // cogemos el xMin y el yMax de la esquina inferior izquierda
+        var xMin = corners[0].x;
+        var yMax = corners[0].y;
+        
+        // cogemos el xMax y el yMin de la esquina superior derecha
+        var xMax = corners[2].x;
+        var yMin = corners[2].y;
+        
+        // cogemos las 4 esquinas de la zona de No Spawn
+        var cornersNoSpawn = new Vector3[4];
+        noSpawnRect.GetWorldCorners(cornersNoSpawn);
+
+        // elegimos una posicion aleatoria dentro de la zona de Spawn
+        ingredientPosition = new Vector3(Random.Range(xMin, xMax), Random.Range(yMin, yMax), 0);
+        
+        // si la posicion esta dentro de la NoSpawnZone volvemos a buscar otra posicion
+        while (PosWithinNoSpawnZone(ingredientPosition, cornersNoSpawn))
         {
-             pos = new Vector3(Random.Range(boundsRect.rect.xMin, boundsRect.rect.xMax), Random.Range(boundsRect.rect.yMin, boundsRect.rect.yMax), 0);
+            ingredientPosition = new Vector3(Random.Range(xMin, xMax), Random.Range(yMin, yMax), 0);
         }
 
-        return pos;
+        return ingredientPosition;
+    }
+
+    private bool PosWithinNoSpawnZone(Vector3 position, Vector3[] zone)
+    {
+        if (position.x >= zone[0].x && position.x <= zone[2].x && position.y >= zone[0].y && position.y <= zone[2].y)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
