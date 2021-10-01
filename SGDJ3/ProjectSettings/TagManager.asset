@@ -46,11 +46,11 @@ TagManager:
   - name: BG
     uniqueID: 2041821635
     locked: 1
-  - name: NPC
-    uniqueID: 266845257
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: NPC
+    uniqueID: 266845257
     locked: 0
   - name: Ingredientes
     uniqueID: 3825723459

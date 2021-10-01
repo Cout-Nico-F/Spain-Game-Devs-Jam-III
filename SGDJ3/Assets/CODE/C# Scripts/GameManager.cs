@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +9,7 @@ public class GameManager : Singleton<GameManager>
     private CursorMove cursor;
     private List<string> _partyInvitations;
     private bool isGamePlay;
+
 
     public List<string> PartyInvitations { get => _partyInvitations; set => _partyInvitations = value; }
 

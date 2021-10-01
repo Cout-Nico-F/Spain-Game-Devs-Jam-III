@@ -4,47 +4,48 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField]
-    private int levelObjective;
-
+    [SerializeField] private LevelAsset[] _levels;
     [SerializeField] private Health healthSystem;
     [SerializeField] private FriendsUi friends_ui;
+    [SerializeField] private GameObject levelComplete_ui;
+    [SerializeField] private GameObject levelOver_ui;
+
+    private int currentLevel = 1;
     private int friendCount;
-
     private int health;
-
     private int maxHealth = 6;
-
     private bool hasPotion;
     private bool isLevelFinish;
-
-    [SerializeField]
-    private GameObject levelComplete_ui;
-    [SerializeField]
-    private GameObject levelOver_ui;
-
-
     private LevelStars _levelStars;
 
-    public int LevelObjective { get => levelObjective; }
+    public int CurrentLevel => currentLevel; 
+    public int LevelObjective { get => _levels[currentLevel-1].levelObjective; }
     public int Health { get => health; }
     public bool HasPotion { get => hasPotion; set => hasPotion = value; }
 
     public bool IsLevelFinish { get => isLevelFinish; set => isLevelFinish = value; }
 
-    private void Awake()
+    private void Start()
     {
+        currentLevel = 1;
         health = maxHealth;
         hasPotion = false;
         isLevelFinish = false;
         _levelStars = levelComplete_ui.transform.Find("Stars").GetComponent<LevelStars>();
-
-    }
-
-    private void Start()
-    {
         AudioSystem.Instance.Play("Gameplay");
+        SpawnNpc();
     }
+
+    private void SpawnNpc()
+    {
+        for (int i = 0; i < _levels[currentLevel-1].npcPrefabs.Length; i++)
+        {
+            Instantiate(_levels[currentLevel - 1].npcPrefabs[i], _levels[currentLevel - 1].npcPositions[i],
+                Quaternion.identity);
+        }
+    }
+
+
     //Este metodo lo llamamos al detectar colision pocion-npc y comprobar que son del mismo color.
     public void FriendJoined()
     {
