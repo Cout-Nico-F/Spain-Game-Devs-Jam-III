@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 336398031597215775}
   - component: {fileID: -4472206974854935752}
   - component: {fileID: 2488569586167403290}
-  - component: {fileID: 2094551892857707711}
+  - component: {fileID: 4016219029735118512}
   - component: {fileID: 7764526028925342919}
   m_Layer: 0
   m_Name: Ing_Weed
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistanceBetweenIngredients: 1
---- !u!114 &2094551892857707711
+--- !u!114 &4016219029735118512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -4736,10 +4736,10 @@ MonoBehaviour:
   boundsRect: {fileID: 147057371}
   noSpawnRect: {fileID: 2079771989}
   ingredients:
+  - {fileID: 8824810733748918294, guid: b22fac63d85daa64aadfbbdc2f581fb8, type: 3}
+  - {fileID: -5612821290139430273, guid: 261ce10bc00748545aab63d6d24f0505, type: 3}
   - {fileID: 3728783955030389574, guid: 79031283b0b74d44790cad6180e9d16d, type: 3}
-  - {fileID: 2094551892857707711, guid: 00e7e562c9cb60b49a8e6e2c08a559a0, type: 3}
-  - {fileID: -8191338184627832555, guid: b22fac63d85daa64aadfbbdc2f581fb8, type: 3}
-  - {fileID: -1370914205700103537, guid: 261ce10bc00748545aab63d6d24f0505, type: 3}
+  - {fileID: 4016219029735118512, guid: 00e7e562c9cb60b49a8e6e2c08a559a0, type: 3}
   spawnDelayInSeconds: 1
   ingredientSpawnerGroup: {fileID: 2113050837}
 --- !u!4 &2113050837

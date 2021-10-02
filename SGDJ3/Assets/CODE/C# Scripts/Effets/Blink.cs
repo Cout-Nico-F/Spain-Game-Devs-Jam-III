@@ -22,13 +22,14 @@ public class Blink : MonoBehaviour
         var counter = 0.0f;
         var start = 1.0f;
         var end = 0.0f;
+        var color = _renderer.color;
+
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
             counter += Time.deltaTime;
             var interpolation = counter / (1.0f/frequency);
             
-            var color = _renderer.color;
             color.a = Mathf.Lerp(start, end, interpolation);
             _renderer.color = color;
             
@@ -39,5 +40,8 @@ public class Blink : MonoBehaviour
             } 
             yield return null;
         }
+
+        color.a = 1;
+        _renderer.color = color;
     }
 }

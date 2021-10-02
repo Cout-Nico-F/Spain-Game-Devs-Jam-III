@@ -16,13 +16,12 @@ public class Ingredient : MonoBehaviour
 
     private void LateUpdate()
     {
-        Color color = this.GetComponent<SpriteRenderer>().color;
+        Color color = GetComponent<SpriteRenderer>().color;
 
         if (isPressed)
         {
             color.a = 1;
-            this.GetComponent<SpriteRenderer>().color = color;
-            return;
+            GetComponent<SpriteRenderer>().color = color;
         }
     }
 
@@ -59,5 +58,5 @@ public class Ingredient : MonoBehaviour
         isPressed = false;
         timeRemaining = timeLife;
     }
-
+    
 }

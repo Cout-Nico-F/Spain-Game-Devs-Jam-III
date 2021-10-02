@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6222663492970139968}
   - component: {fileID: 5456219019226872873}
   - component: {fileID: 4458353768493833376}
-  - component: {fileID: -1370914205700103537}
+  - component: {fileID: -5612821290139430273}
   - component: {fileID: -1758976072005672979}
   m_Layer: 0
   m_Name: Ing_mush
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistanceBetweenIngredients: 1
---- !u!114 &-1370914205700103537
+--- !u!114 &-5612821290139430273
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
