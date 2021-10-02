@@ -26,7 +26,6 @@ public class Health : MonoBehaviour
         }
         else
         {
-            hearts[heartNumber].sprite = null;
             var color = hearts[heartNumber].color;
             color.a = 0;
             hearts[heartNumber].color = color;

@@ -10,7 +10,7 @@ public class LevelObjetive : MonoBehaviour
     private void OnEnable()
     {
         _levelManager = FindObjectOfType<LevelManager>();
-        levelName.text = "Level " + _levelManager.CurrentLevel;
+        levelName.text = "Nivel " + _levelManager.CurrentLevel;
         var levelObjective = FindObjectOfType<LevelManager>().LevelObjective;
         levelObjectiveText.text =
             "Objetivo de dia: Curar " + levelObjective + (levelObjective > 1 ? " emociones" : " emocion");

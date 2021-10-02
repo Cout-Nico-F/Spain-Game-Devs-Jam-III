@@ -4071,6 +4071,8 @@ MonoBehaviour:
   friends_ui: {fileID: 921004803}
   levelComplete_ui: {fileID: 454659110}
   levelOver_ui: {fileID: 287135184}
+  levelCompleteText: {fileID: 1342814023}
+  levelOverText: {fileID: 1635054482}
 --- !u!4 &1674794875
 Transform:
   m_ObjectHideFlags: 0

@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private FriendsUi friends_ui;
     [SerializeField] private GameObject levelComplete_ui;
     [SerializeField] private GameObject levelOver_ui;
+    [SerializeField] private Text levelCompleteText;
+    [SerializeField] private Text levelOverText;
 
     private int currentLevel = 1;
     private int friendCount;
@@ -17,6 +21,7 @@ public class LevelManager : MonoBehaviour
     private bool hasPotion;
     private bool isLevelFinish;
     private LevelStars _levelStars;
+    private List<GameObject> _liveNpcs;
 
     public int CurrentLevel => currentLevel; 
     public int LevelObjective { get => _levels[currentLevel-1].levelObjective; }
@@ -33,6 +38,7 @@ public class LevelManager : MonoBehaviour
         isLevelFinish = false;
         _levelStars = levelComplete_ui.transform.Find("Stars").GetComponent<LevelStars>();
         AudioSystem.Instance.Play("Gameplay");
+        _liveNpcs = new List<GameObject>();
         SpawnNpc();
     }
 
@@ -40,8 +46,9 @@ public class LevelManager : MonoBehaviour
     {
         for (int i = 0; i < _levels[currentLevel-1].npcPrefabs.Length; i++)
         {
-            Instantiate(_levels[currentLevel - 1].npcPrefabs[i], _levels[currentLevel - 1].npcPositions[i],
+            GameObject npc = Instantiate(_levels[currentLevel - 1].npcPrefabs[i], _levels[currentLevel - 1].npcPositions[i],
                 Quaternion.identity);
+            _liveNpcs.Add(npc);
         }
     }
 
@@ -69,6 +76,7 @@ public class LevelManager : MonoBehaviour
         if (health < 1)
         {
             isLevelFinish = true;
+            GameManager.Instance.IsGamePlay = false;
             AudioSystem.Instance.Play("Level Lost");
             StartCoroutine(LevelOver());
         }
@@ -82,21 +90,40 @@ public class LevelManager : MonoBehaviour
         Debug.Log("WIN");
         GameManager.Instance.IsGamePlay = false;
         AudioSystem.Instance.Play("Level Won");
+        levelCompleteText.text = "Nivel " + currentLevel;
         levelComplete_ui.SetActive(true);
         _levelStars.SetStars(Mathf.FloorToInt(health/2f));
+        DestroyLiveNpcs();
+    }
+
+    private void DestroyLiveNpcs()
+    {
+        foreach (var liveNpc in _liveNpcs)
+        {
+            Destroy(liveNpc);
+        }
+
+        _liveNpcs.Clear();
     }
 
     private IEnumerator LevelOver()
     {
         yield return new WaitForSecondsRealtime(2);
+        levelOverText.text = "Nivel " + currentLevel;
         levelOver_ui.SetActive(true);
+        DestroyLiveNpcs();
     }
 
     public void Retry()
     {
         AudioSystem.Instance.Play("Boton Aceptar");
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // en lugar de cargar de nuevo la escena, debemos inicializar la escena
+        // de Gameplay cargando el mismo nivel
+        levelOver_ui.SetActive(false);
+        AudioSystem.Instance.Stop("Level Lost");
+        ResetLevel();
     }
 
     public void NextLevel()
@@ -109,6 +136,18 @@ public class LevelManager : MonoBehaviour
         levelComplete_ui.SetActive(false);
         AudioSystem.Instance.Stop("Level Won");
         currentLevel++;
+        if (currentLevel > _levels.Length)
+        {
+            SceneManager.LoadScene("Party");
+            return;
+        }
+
+        ResetLevel();
+    }
+
+    private void ResetLevel()
+    {
+        friendCount = 0;
         health = maxHealth;
         healthSystem.ResetLive();
         friends_ui.ResetFriends();
