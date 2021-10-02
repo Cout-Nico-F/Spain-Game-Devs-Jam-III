@@ -80,5 +80,6 @@ public class UiManager : Singleton<UiManager>
         
         objectivesPanel.SetActive(false);
         isObjectivesPanelActive = false;
+        GameManager.Instance.IsGamePlay = true;
     }
 }

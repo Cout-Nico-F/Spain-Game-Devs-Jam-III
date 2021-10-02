@@ -13,6 +13,9 @@ public class GameManager : Singleton<GameManager>
 
     public List<string> PartyInvitations { get => _partyInvitations; set => _partyInvitations = value; }
 
+    public bool IsGamePlay { get => isGamePlay; set => isGamePlay = value; }
+
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -27,7 +30,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (isGamePlay)
         {
-            if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) && SceneManager.GetActiveScene().name.StartsWith("Level"))
+            if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) && SceneManager.GetActiveScene().name.Equals("Gameplay"))
             {
                 Pause();
             }

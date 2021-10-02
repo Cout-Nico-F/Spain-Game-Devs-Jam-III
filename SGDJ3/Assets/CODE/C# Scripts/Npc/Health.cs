@@ -34,4 +34,18 @@ public class Health : MonoBehaviour
         }
         fullHeart = !fullHeart;
     }
+
+
+    public void ResetLive()
+    {
+        heartNumber = 2;
+        fullHeart = true;
+        foreach (var heart in hearts)
+        {
+            heart.sprite = images[0];
+            var color = heart.color;
+            color.a = 1;
+            heart.color = color;
+        }
+    }
 }

@@ -7,7 +7,7 @@ public class LevelObjetive : MonoBehaviour
     [SerializeField] private Text levelName;
     private LevelManager _levelManager;
     
-    private void Start()
+    private void OnEnable()
     {
         _levelManager = FindObjectOfType<LevelManager>();
         levelName.text = "Level " + _levelManager.CurrentLevel;

@@ -80,6 +80,7 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(2);
 
         Debug.Log("WIN");
+        GameManager.Instance.IsGamePlay = false;
         AudioSystem.Instance.Play("Level Won");
         levelComplete_ui.SetActive(true);
         _levelStars.SetStars(Mathf.FloorToInt(health/2f));
@@ -102,6 +103,19 @@ public class LevelManager : MonoBehaviour
     {
         AudioSystem.Instance.Play("Boton Aceptar");
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        // en lugar de cargar una nueva escena, debemos inicializar la escena de Gameplay cargando
+        // el nuevo nivel
+        levelComplete_ui.SetActive(false);
+        AudioSystem.Instance.Stop("Level Won");
+        currentLevel++;
+        health = maxHealth;
+        healthSystem.ResetLive();
+        friends_ui.ResetFriends();
+        hasPotion = false;
+        isLevelFinish = false;
+        AudioSystem.Instance.Play("Gameplay");
+        SpawnNpc();
+        UiManager.Instance.ShowObjectives();
     }
 }

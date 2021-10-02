@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +23,12 @@ public class FriendsUi : MonoBehaviour
     public void AddFriend()
     {
         friends++;
+        scoreText.text = friends + "/" + levelManager.LevelObjective;
+    }
+
+    public void ResetFriends()
+    {
+        friends = 0;
         scoreText.text = friends + "/" + levelManager.LevelObjective;
     }
 }

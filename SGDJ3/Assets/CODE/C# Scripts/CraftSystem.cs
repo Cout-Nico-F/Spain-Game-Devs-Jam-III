@@ -10,8 +10,10 @@ public class CraftSystem : Singleton<CraftSystem>
     [SerializeField] private Sprite potIdle;
     [SerializeField] private GameObject poof_prefab;
     [SerializeField] private GameObject boom_prefab;
+    [SerializeField] private RectTransform explosionPosition;
     [SerializeField] private Animator craft_anim;
     [SerializeField] private Image witchUi;
+    [SerializeField] private Image potUi;
     private LevelManager levelManager;
     private bool finishAnimation;
     
@@ -53,6 +55,7 @@ public class CraftSystem : Singleton<CraftSystem>
         }
         else return null;// porque no hay otra pocion de 2 ingredientes buena.
     }
+    
     public void SpawnPotion(Recipe potion, Ingredient ingredient1, Ingredient ingredient2)
     {
         Destroy(ingredient1.gameObject);
@@ -72,12 +75,11 @@ public class CraftSystem : Singleton<CraftSystem>
     {
         //instanciamos el poof encima de los ingredientes
         AudioSystem.Instance.Play("Ingrediente Mezclado");
-
-
+        
         var poof1 = Instantiate(poof_prefab, spawnPosition, Quaternion.identity);
         Destroy(poof1, 2);
         
-        //esperamos a que acabe la animacion
+        //esperamos a que acabe la animación
         finishAnimation = false;
         StartCoroutine(WaitTime(0.2f));
         while (!finishAnimation)
@@ -91,7 +93,7 @@ public class CraftSystem : Singleton<CraftSystem>
 
         //esperamos a que acabe la animacion
         finishAnimation = false;
-        StartCoroutine(WaitTime(1f));
+        StartCoroutine(WaitTime(1.3f));
         while (!finishAnimation)
         {
             yield return null;
@@ -133,7 +135,7 @@ public class CraftSystem : Singleton<CraftSystem>
 
         //esperamos a que acabe la animacion
         finishAnimation = false;
-        StartCoroutine(WaitTime(1f));
+        StartCoroutine(WaitTime(1.3f));
         while (!finishAnimation)
         {
             yield return null;
@@ -143,12 +145,21 @@ public class CraftSystem : Singleton<CraftSystem>
 
         AudioSystem.Instance.Play("Explosion");
 
-        var explosion = Instantiate(boom_prefab, craft_anim.transform.position, Quaternion.identity);
+        var explosion = Instantiate(boom_prefab, explosionPosition.position, Quaternion.identity);
         Destroy(explosion, 1.1f);
         
-        //cambiamos la imagen a la brujita quemada
+        //cambiamos la imagen a la brujita quemada y ocultamos el pot
+        potUi.enabled = false;
         witchUi.sprite = potExplode;
+        
+        //esperamos a que acabe la animacion
+        finishAnimation = false;
         StartCoroutine(WaitTime(1.2f));
+        while (!finishAnimation)
+        {
+            yield return null;
+        }
+        potUi.enabled = true;
         witchUi.sprite = potIdle;
         
         FindObjectOfType<LevelManager>().Damaged();
