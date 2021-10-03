@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class IngredientSpawner : MonoBehaviour
 {
@@ -21,16 +22,22 @@ public class IngredientSpawner : MonoBehaviour
     private float timeRemaining;
     private LevelManager levelManager;
     private Vector3 ingredientPosition;
+    private Vector3[] corners;
+    private Vector3[] cornersNoSpawn;
+    private float xMin;
+    private float yMax;
+    private float xMax;
+    private float yMin;
 
 
-    private void Awake()
+    private void Start()
     {
         timeRemaining = 2; //initial delay
         //seteo primera vuelta de ingredientes ( aca podemos cambiarlo a antojo para que siempre toque algun ingrediente primero
         //puede ser util para ense�ar la primer pocion a modo de tutorial )
         ingredientPool = new List<Ingredient>(ingredients);
         levelManager = FindObjectOfType<LevelManager>();
-
+        GetBounds();
     }
 
     private void Update()
@@ -79,27 +86,12 @@ public class IngredientSpawner : MonoBehaviour
 
     private Vector3 ChoosePosition()
     {
-        // cogemos las 4 esquinas del SpawnZone
-        var corners = new Vector3[4];
-        boundsRect.GetWorldCorners(corners);
-
-        // cogemos el xMin y el yMax de la esquina inferior izquierda
-        var xMin = corners[0].x;
-        var yMax = corners[0].y;
-        
-        // cogemos el xMax y el yMin de la esquina superior derecha
-        var xMax = corners[2].x;
-        var yMin = corners[2].y;
-        
-        // cogemos las 4 esquinas de la zona de No Spawn
-        var cornersNoSpawn = new Vector3[4];
-        noSpawnRect.GetWorldCorners(cornersNoSpawn);
-
         // elegimos una posicion aleatoria dentro de la zona de Spawn
         ingredientPosition = new Vector3(Random.Range(xMin, xMax), Random.Range(yMin, yMax), 0);
-        
-        // si la posicion esta dentro de la NoSpawnZone volvemos a buscar otra posicion
-        while (PosWithinNoSpawnZone(ingredientPosition, cornersNoSpawn))
+
+        // si la posicion esta dentro de la NoSpawnZone o colisiona con algo
+        // volvemos a buscar otra posicion
+        while (IsColliding(ingredientPosition, 0.6f) || PosWithinNoSpawnZone(ingredientPosition, cornersNoSpawn))
         {
             ingredientPosition = new Vector3(Random.Range(xMin, xMax), Random.Range(yMin, yMax), 0);
         }
@@ -116,5 +108,29 @@ public class IngredientSpawner : MonoBehaviour
 
         return false;
     }
-    
+
+    private void GetBounds()
+    {
+        // cogemos las 4 esquinas del SpawnZone
+        corners = new Vector3[4];
+        boundsRect.GetWorldCorners(corners);
+
+        // cogemos el xMin y el yMax de la esquina inferior izquierda
+        xMin = corners[0].x;
+        yMax = corners[0].y;
+        
+        // cogemos el xMax y el yMin de la esquina superior derecha
+        xMax = corners[2].x;
+        yMin = corners[2].y;
+        
+        // cogemos las 4 esquinas de la zona de No Spawn
+        cornersNoSpawn = new Vector3[4];
+        noSpawnRect.GetWorldCorners(cornersNoSpawn);
+    }
+
+    private bool IsColliding(Vector2 point, float radius)
+    {
+        Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(point, radius);
+        return collider2Ds.Length > 0;
+    }
 }
