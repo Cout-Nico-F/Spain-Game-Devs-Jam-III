@@ -9,8 +9,10 @@ public class StringShot : MonoBehaviour
     [SerializeField] private Transform center;
     [SerializeField] private Transform idlePosition;
     [SerializeField] private Transform[] stripPositions;
+    [SerializeField] private float maxLength;
 
     private Camera _camera;
+    private Vector3 currentPosition;
     private bool isMouseDown;
 
     private void Start()
@@ -20,6 +22,7 @@ public class StringShot : MonoBehaviour
         strips[1].positionCount = 2;
         strips[0].SetPosition(0, stripPositions[0].position);
         strips[1].SetPosition(0, stripPositions[1].position);
+        ResetStrips();
     }
 
     private void Update()
@@ -28,11 +31,9 @@ public class StringShot : MonoBehaviour
         {
             var mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;
-            SetStrips(mousePosition);
-        }
-        else
-        {
-            ResetStrips();
+            currentPosition = mousePosition;
+            currentPosition = center.position + Vector3.ClampMagnitude(currentPosition - center.position, maxLength);
+            SetStrips(currentPosition);
         }
     }
 
@@ -44,11 +45,13 @@ public class StringShot : MonoBehaviour
     private void OnMouseUp()
     {
         isMouseDown = false;
+        ResetStrips();
     }
 
     private void ResetStrips()
     {
-        SetStrips(idlePosition.position);
+        currentPosition = idlePosition.position;
+        SetStrips(currentPosition);
     }
 
     private void SetStrips(Vector3 position)

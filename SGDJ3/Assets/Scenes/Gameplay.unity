@@ -4180,6 +4180,7 @@ MonoBehaviour:
   stripPositions:
   - {fileID: 2065191582}
   - {fileID: 1196523679}
+  maxLength: 50
 --- !u!61 &1426488734
 BoxCollider2D:
   m_ObjectHideFlags: 0
