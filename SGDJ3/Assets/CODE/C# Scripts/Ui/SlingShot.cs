@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class SlingShot : MonoBehaviour
 {
+    [SerializeField] private LevelManager _levelManager;
     [SerializeField] private LineRenderer[] strips;
     [SerializeField] private Transform center;
     [SerializeField] private Transform idlePosition;
     [SerializeField] private Transform[] stripPositions;
     [SerializeField] private float maxLength;
     [SerializeField] private float potionPositionOffset;
+    [SerializeField] private float force;
 
     private GameObject _potion;
     private Rigidbody2D rbPotion;
@@ -43,18 +45,39 @@ public class SlingShot : MonoBehaviour
             mousePosition.z = 0;
             currentPosition = center.position - Vector3.ClampMagnitude(center.position - mousePosition, maxLength);
             SetStrips(currentPosition);
+
+            if (potionCollider)
+            {
+                potionCollider.enabled = true;
+            }
         }
     }
 
     private void OnMouseDown()
     {
         isMouseDown = true;
+        AudioSystem.Instance.Play("Agarrar Tirachinas");
     }
 
     private void OnMouseUp()
     {
         isMouseDown = false;
+        Shoot();
         ResetStrips();
+    }
+
+    private void Shoot()
+    {
+        AudioSystem.Instance.Play("Lanzar Pocion");
+        rbPotion.isKinematic = false;
+        Vector3 potionForce = (currentPosition - center.position) * force * -1;
+        rbPotion.velocity = potionForce;
+        
+        rbPotion = null;
+        potionCollider = null;
+        _potion = null;
+
+        _levelManager.HasPotion = false;
     }
 
     private void ResetStrips()
@@ -85,6 +108,7 @@ public class SlingShot : MonoBehaviour
 
     public void SetPotion(GameObject potion)
     {
+        _levelManager.HasPotion = true;
         _potion = potion;
         rbPotion = _potion.GetComponent<Rigidbody2D>();
         potionCollider = _potion.GetComponent<Collider2D>();
