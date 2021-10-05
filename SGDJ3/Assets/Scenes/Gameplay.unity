@@ -4157,7 +4157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 198, y: 167.7}
+  m_AnchoredPosition: {x: 198, y: 167.70001}
   m_SizeDelta: {x: 170.01, y: 170.01}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1426488733
@@ -4180,7 +4180,7 @@ MonoBehaviour:
   stripPositions:
   - {fileID: 2065191582}
   - {fileID: 1196523679}
-  maxLength: 50
+  maxLength: 5
 --- !u!61 &1426488734
 BoxCollider2D:
   m_ObjectHideFlags: 0
