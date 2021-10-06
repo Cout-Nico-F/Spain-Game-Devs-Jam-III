@@ -18,9 +18,8 @@ public class LevelStars : MonoBehaviour
     {
         for (var i = 0; i < stars.Length; i++)
         {
-            if (amount <= i) continue;
+            stars[i].sprite = (i < amount) ? images[0] : images[1];
             
-            stars[i].sprite = images[0];
             var color = stars[i].color;
             color.a = 1f;
             stars[i].color = color;

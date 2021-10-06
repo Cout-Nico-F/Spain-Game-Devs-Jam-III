@@ -152,6 +152,7 @@ public class LevelManager : MonoBehaviour
         friendCount = 0;
         health = maxHealth;
         healthSystem.ResetLive();
+        _levelStars.SetStars(3);
         friends_ui.ResetFriends();
         hasPotion = false;
         isLevelFinish = false;
