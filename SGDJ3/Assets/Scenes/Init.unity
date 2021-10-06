@@ -123,260 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &271145243
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 271145244}
-  - component: {fileID: 271145245}
-  m_Layer: 0
-  m_Name: AudioFX
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &271145244
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271145243}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1068208120}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &271145245
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271145243}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 4018541840268867159, guid: b11d88dd669d0e4419c5b801680d3c14, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!1 &280495003
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 280495004}
-  - component: {fileID: 280495005}
-  m_Layer: 0
-  m_Name: MainMusic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &280495004
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 280495003}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1068208120}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &280495005
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 280495003}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 3956070316932494471, guid: b11d88dd669d0e4419c5b801680d3c14, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1068208119
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,9 +151,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 280495004}
-  - {fileID: 271145244}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -425,121 +169,119 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: History
-    soundFX: 0
     clip: {fileID: 8300000, guid: 1f99cb6a482415d4092cd1af2904ed65, type: 3}
-    volume: 0.633
     loop: 1
     playOnAwake: 1
+    volume: 0.633
+    source: {fileID: 0}
   - name: Main Menu
-    soundFX: 0
     clip: {fileID: 8300000, guid: 2e4608876d665b54996cc639b2a5dbbb, type: 3}
-    volume: 0.633
     loop: 1
     playOnAwake: 1
+    volume: 0.633
+    source: {fileID: 0}
   - name: Gameplay
-    soundFX: 0
     clip: {fileID: 8300000, guid: a31d62d306558f64c86b9cbacbf10c27, type: 3}
-    volume: 0.633
     loop: 1
     playOnAwake: 1
+    volume: 0.633
+    source: {fileID: 0}
   - name: Ingredient Spawn
-    soundFX: 1
-    clip: {fileID: 8300000, guid: ee436b116a3eea84eae9add7e7ea83cb, type: 3}
-    volume: 0.773
+    clip: {fileID: 8300000, guid: cb0f0e04e32ece3439bda49ef805847d, type: 3}
     loop: 0
     playOnAwake: 1
+    volume: 0.773
+    source: {fileID: 0}
   - name: Boton Aceptar
-    soundFX: 1
     clip: {fileID: 8300000, guid: 9b21e373c48ffc042bc7bce94a170294, type: 3}
-    volume: 0.633
     loop: 0
     playOnAwake: 1
+    volume: 0.633
+    source: {fileID: 0}
   - name: Agarrar Tirachinas
-    soundFX: 1
     clip: {fileID: 8300000, guid: 75cc90901df28654eaceeffebb619411, type: 3}
+    loop: 0
+    playOnAwake: 1
     volume: 0.741
-    loop: 0
-    playOnAwake: 1
+    source: {fileID: 0}
   - name: Potion Spawn
-    soundFX: 1
     clip: {fileID: 8300000, guid: b2ca7453e50cdf34dbef4af0842a23b0, type: 3}
-    volume: 0.633
     loop: 0
     playOnAwake: 1
+    volume: 0.633
+    source: {fileID: 0}
   - name: Boton
-    soundFX: 1
     clip: {fileID: 8300000, guid: b320befa30b29084caedc024c7a85a37, type: 3}
-    volume: 0.633
     loop: 0
     playOnAwake: 1
+    volume: 0.633
+    source: {fileID: 0}
   - name: Explosion
-    soundFX: 1
     clip: {fileID: 8300000, guid: 2a296548bf1d9b246b47a8c5f0a70674, type: 3}
-    volume: 0.773
     loop: 0
     playOnAwake: 1
+    volume: 0.773
+    source: {fileID: 0}
   - name: Impacto Bueno
-    soundFX: 1
     clip: {fileID: 8300000, guid: 93367d9411ad8734493b1a86303530b3, type: 3}
-    volume: 0.633
     loop: 0
     playOnAwake: 1
+    volume: 0.633
+    source: {fileID: 0}
   - name: Impacto Especial
-    soundFX: 1
     clip: {fileID: 8300000, guid: 24c366a4822a99e4e8b07685dbe9dd2e, type: 3}
-    volume: 0.633
     loop: 0
     playOnAwake: 1
+    volume: 0.633
+    source: {fileID: 0}
   - name: Impacto Malo
-    soundFX: 1
     clip: {fileID: 8300000, guid: c23f8e5e6bccea6469bab2634740ae6a, type: 3}
-    volume: 0.633
     loop: 0
     playOnAwake: 1
+    volume: 0.633
+    source: {fileID: 0}
   - name: Ingrediente Mezclado
-    soundFX: 1
     clip: {fileID: 8300000, guid: b701955d3a297f04b9650fe4ca196043, type: 3}
-    volume: 0.773
     loop: 0
     playOnAwake: 1
+    volume: 0.773
+    source: {fileID: 0}
   - name: Ingrediente Pinchado
-    soundFX: 1
     clip: {fileID: 8300000, guid: 5ca1b786e02f17d479f2623d41e51b23, type: 3}
-    volume: 0.633
     loop: 0
     playOnAwake: 1
+    volume: 0.633
+    source: {fileID: 0}
   - name: Lanzar Pocion
-    soundFX: 1
     clip: {fileID: 8300000, guid: 83ecbffec74e49444b3d5ca86d594bf8, type: 3}
-    volume: 0.773
     loop: 0
     playOnAwake: 1
+    volume: 0.773
+    source: {fileID: 0}
   - name: Olla Burbujeando
-    soundFX: 1
     clip: {fileID: 8300000, guid: b648d265b0c07c4459fb161c9a228a86, type: 3}
-    volume: 0.773
     loop: 0
     playOnAwake: 1
+    volume: 0.773
+    source: {fileID: 0}
   - name: Level Won
-    soundFX: 0
     clip: {fileID: 8300000, guid: 79955824db17c5b45a31c5fc29538348, type: 3}
-    volume: 0.773
     loop: 0
     playOnAwake: 1
+    volume: 0.773
+    source: {fileID: 0}
   - name: Level Lost
-    soundFX: 0
     clip: {fileID: 8300000, guid: 005748126b011fc4bb0cffade25cab8e, type: 3}
-    volume: 0.773
     loop: 0
     playOnAwake: 1
+    volume: 0.773
+    source: {fileID: 0}
   - name: Party
-    soundFX: 0
     clip: {fileID: 8300000, guid: 7dd3491f24d2c464787b2f5b5887f0eb, type: 3}
-    volume: 0.633
     loop: 1
     playOnAwake: 1
-  mainMusic: {fileID: 280495005}
-  soundFX: {fileID: 271145245}
+    volume: 0.633
+    source: {fileID: 0}
 --- !u!81 &1068208122
 AudioListener:
   m_ObjectHideFlags: 0

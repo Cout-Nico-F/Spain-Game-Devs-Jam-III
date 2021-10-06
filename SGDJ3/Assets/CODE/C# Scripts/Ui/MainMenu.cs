@@ -30,6 +30,7 @@ public class MainMenu : MonoBehaviour
     private void StartGame()
     {
         AudioSystem.Instance.Play("Boton Aceptar");
+        AudioSystem.Instance.Stop("Main Menu");
         GameManager.Instance.PlayHistory();
     }
 

@@ -12,6 +12,8 @@ public class PartyMusic : MonoBehaviour
 
     public void Credits()
     {
+        AudioSystem.Instance.Stop("Party");
+        AudioSystem.Instance.Play("Main Menu");
         GameManager.Instance.GoToCredits();
     }
 }
