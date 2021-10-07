@@ -47,6 +47,7 @@ public class UiManager : Singleton<UiManager>
 
     private void BackToMenu()
     {
+        AudioSystem.Instance.Stop("Gameplay");
         GameManager.Instance.ToMainMenu();
     }
 
