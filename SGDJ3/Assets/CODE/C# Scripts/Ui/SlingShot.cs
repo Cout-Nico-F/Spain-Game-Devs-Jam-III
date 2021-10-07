@@ -55,12 +55,16 @@ public class SlingShot : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (_potion == null) return;
+        
         isMouseDown = true;
         AudioSystem.Instance.Play("Agarrar Tirachinas");
     }
 
     private void OnMouseUp()
     {
+        if (_potion == null) return;
+        
         isMouseDown = false;
         Shoot();
         ResetStrips();
