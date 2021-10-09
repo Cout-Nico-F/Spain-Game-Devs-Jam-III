@@ -1,19 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Audio;
+﻿using UnityEngine;
 using System;
 
 public class AudioSystem : Singleton<AudioSystem>
 {
     public Sound[] sounds;
-    public AudioSource mainMusic;
-    public AudioSource soundFX;
-
 
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+        foreach (var sound in sounds)
+        {
+            sound.source = gameObject.AddComponent<AudioSource>();
+            sound.source.clip = sound.clip;
+            sound.source.volume = sound.volume;
+            sound.source.loop = sound.loop;
+            sound.source.playOnAwake = sound.playOnAwake;
+        }
     }
     
 
@@ -22,20 +24,11 @@ public class AudioSystem : Singleton<AudioSystem>
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s != null)
         {
-            if (s.soundFX)
-            {
-                soundFX.clip = s.clip;
-                soundFX.volume = s.volume;                
-                soundFX.Play();
-            }
-            else
-            {
-                mainMusic.clip = s.clip;
-                mainMusic.volume = s.volume;
-                mainMusic.loop = s.loop;
-                mainMusic.playOnAwake = s.playOnAwake;
-                mainMusic.Play();
-            }
+            s.source.Play();
+        }
+        else
+        {
+            Debug.Log("No existe el sonido " + name);
         }
     }
 
@@ -45,8 +38,11 @@ public class AudioSystem : Singleton<AudioSystem>
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s != null)
         {
-            mainMusic.clip = s.clip;
-            mainMusic.Stop();
+            s.source.Stop();
+        }
+        else
+        {
+            Debug.Log("No existe el sonido " + name);
         }
     }
 }

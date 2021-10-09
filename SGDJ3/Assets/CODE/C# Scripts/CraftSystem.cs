@@ -16,10 +16,13 @@ public class CraftSystem : Singleton<CraftSystem>
     [SerializeField] private Image potUi;
     private LevelManager levelManager;
     private bool finishAnimation;
+    private SlingShot _slingShot;
     
     private void Start()
     {
+        potionSpawnPoint.position = new Vector3(potionSpawnPoint.position.x, potionSpawnPoint.position.y, 0f);
         levelManager = FindObjectOfType<LevelManager>();
+        _slingShot = FindObjectOfType<SlingShot>();
     }
     
     public Recipe MixIngredients(string ingredient1, string ingredient2)
@@ -105,8 +108,8 @@ public class CraftSystem : Singleton<CraftSystem>
 
         AudioSystem.Instance.Play("Potion Spawn");
         //instanciamos la pocion
-        Instantiate(potion, potionSpawnPoint.position, Quaternion.identity);
-        
+        var potionRecipe = Instantiate(potion, potionSpawnPoint.position, Quaternion.identity);
+        _slingShot.SetPotion(potionRecipe.gameObject);
         levelManager.HasPotion = true;
     }
 

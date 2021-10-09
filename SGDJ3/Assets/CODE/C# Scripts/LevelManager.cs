@@ -77,6 +77,7 @@ public class LevelManager : MonoBehaviour
         {
             isLevelFinish = true;
             GameManager.Instance.IsGamePlay = false;
+            AudioSystem.Instance.Stop("Gameplay");
             AudioSystem.Instance.Play("Level Lost");
             StartCoroutine(LevelOver());
         }
@@ -89,6 +90,7 @@ public class LevelManager : MonoBehaviour
 
         Debug.Log("WIN");
         GameManager.Instance.IsGamePlay = false;
+        AudioSystem.Instance.Stop("Gameplay");
         AudioSystem.Instance.Play("Level Won");
         levelCompleteText.text = "Nivel " + currentLevel;
         levelComplete_ui.SetActive(true);
@@ -150,6 +152,7 @@ public class LevelManager : MonoBehaviour
         friendCount = 0;
         health = maxHealth;
         healthSystem.ResetLive();
+        _levelStars.SetStars(3);
         friends_ui.ResetFriends();
         hasPotion = false;
         isLevelFinish = false;
