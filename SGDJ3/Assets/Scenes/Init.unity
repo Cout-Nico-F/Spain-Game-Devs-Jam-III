@@ -211,10 +211,10 @@ MonoBehaviour:
     volume: 0.633
     source: {fileID: 0}
   - name: Boton
-    clip: {fileID: 8300000, guid: b320befa30b29084caedc024c7a85a37, type: 3}
+    clip: {fileID: 8300000, guid: 8ee1b39f51e075343b77d9f788b27ed5, type: 3}
     loop: 0
     playOnAwake: 1
-    volume: 0.633
+    volume: 0.45
     source: {fileID: 0}
   - name: Explosion
     clip: {fileID: 8300000, guid: 2a296548bf1d9b246b47a8c5f0a70674, type: 3}
