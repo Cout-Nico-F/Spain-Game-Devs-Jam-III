@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SlingShot : MonoBehaviour
 {
@@ -9,14 +10,21 @@ public class SlingShot : MonoBehaviour
     [SerializeField] private Transform[] stripPositions;
     [SerializeField] private float maxLength;
     [SerializeField] private float potionPositionOffset;
-    [SerializeField] private float force;
+    [SerializeField] private int forceMultiplier;
+    [SerializeField] private Transform pointsParent;
+    [SerializeField] private GameObject pointPrefab;
+    [SerializeField] private int numberOfPoints;
 
     private GameObject _potion;
     private Rigidbody2D rbPotion;
     private Collider2D potionCollider;
     private Camera _camera;
+    private float force;
     private Vector3 currentPosition;
+    private Vector2 direction;
     private bool isMouseDown;
+    private GameObject[] points;
+
 
     private void Start()
     {
@@ -35,6 +43,15 @@ public class SlingShot : MonoBehaviour
         strips[1].SetPosition(0, stripPositions[1].position);
         
         ResetStrips();
+
+        points = new GameObject[numberOfPoints];
+
+        for (int i = 0; i < numberOfPoints; i++)
+        {
+            points[i] = Instantiate(pointPrefab, center.position, Quaternion.identity, pointsParent);
+        }
+
+        HidePoints();
     }
 
     private void Update()
@@ -45,6 +62,15 @@ public class SlingShot : MonoBehaviour
             mousePosition.z = 0;
             currentPosition = center.position - Vector3.ClampMagnitude(center.position - mousePosition, maxLength);
             SetStrips(currentPosition);
+            direction = (Vector2)(center.position - currentPosition);
+            force = direction.magnitude * forceMultiplier;
+
+            for (int i = 0; i < points.Length; i++)
+            {
+                points[i].transform.position = GetPointPosition(i * .1f);
+            }
+
+            ShowPoints();
 
             if (potionCollider)
             {
@@ -68,13 +94,14 @@ public class SlingShot : MonoBehaviour
         isMouseDown = false;
         Shoot();
         ResetStrips();
+        HidePoints();
     }
 
     private void Shoot()
     {
         AudioSystem.Instance.Play("Lanzar Pocion");
         rbPotion.isKinematic = false;
-        Vector3 potionForce = (currentPosition - center.position) * force * -1;
+        Vector3 potionForce = direction.normalized * force * 1.5f;
         rbPotion.velocity = potionForce;
         
         rbPotion = null;
@@ -117,5 +144,27 @@ public class SlingShot : MonoBehaviour
         rbPotion = _potion.GetComponent<Rigidbody2D>();
         potionCollider = _potion.GetComponent<Collider2D>();
         potionCollider.enabled = false;
+    }
+
+    private Vector2 GetPointPosition(float time)
+    {
+        Vector2 currentPosition = (Vector2)center.position + (direction.normalized * force * time) + .5f * Physics2D.gravity * (time * time);
+        return currentPosition;
+    }
+
+    private void ShowPoints()
+    {
+        for (int i = 0; i < points.Length; i++)
+        {
+            points[i].GetComponent<Image>().enabled = true;
+        }
+    }
+
+    private void HidePoints()
+    {
+        for (int i = 0; i < points.Length; i++)
+        {
+            points[i].GetComponent<Image>().enabled = false;
+        }
     }
 }
