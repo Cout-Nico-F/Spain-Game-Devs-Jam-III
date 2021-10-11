@@ -101,9 +101,8 @@ public class SlingShot : MonoBehaviour
     {
         AudioSystem.Instance.Play("Lanzar Pocion");
         rbPotion.isKinematic = false;
-        Vector3 potionForce = direction.normalized * force * 1.5f;
-        rbPotion.velocity = potionForce;
-        
+        rbPotion.velocity = direction.normalized * force * 1.1f;
+
         rbPotion = null;
         potionCollider = null;
         _potion = null;

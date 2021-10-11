@@ -4067,7 +4067,7 @@ MonoBehaviour:
   forceMultiplier: 5
   pointsParent: {fileID: 1771970265}
   pointPrefab: {fileID: 3974790489680662945, guid: 81b5263f7a9a196489dc02588d510f75, type: 3}
-  numberOfPoints: 6
+  numberOfPoints: 5
 --- !u!61 &1426488734
 BoxCollider2D:
   m_ObjectHideFlags: 0
