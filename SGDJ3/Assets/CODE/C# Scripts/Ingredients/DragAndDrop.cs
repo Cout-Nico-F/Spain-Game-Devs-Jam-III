@@ -2,22 +2,19 @@ using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
 {
-    [SerializeField] private float maxDistanceBetweenIngredients;
-    
     private Transform myTransform;
     private Camera cam;
     private Vector3 offset;
-    private Ingredient myIngredient;
-    private Ingredient secondIngredient;
     private Renderer _renderer;
+    private Rigidbody2D _rigidbody;
 
 
     private void Awake()
     {
         myTransform = transform;
-        myIngredient = GetComponent<Ingredient>();
         cam = Camera.main;
         _renderer = GetComponent<Renderer>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void OnMouseDown()
@@ -36,29 +33,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (secondIngredient != null)
-        {
-            var distance = Vector3.Distance(myTransform.position, secondIngredient.transform.position);
-            if (distance > maxDistanceBetweenIngredients) return;
-            
-            var recipe = CraftSystem.Instance.MixIngredients(myIngredient.id, secondIngredient.id);
-            if (recipe != null)
-            {
-                CraftSystem.Instance.SpawnPotion(recipe, myIngredient, secondIngredient);
-            }
-            else
-            {
-                CraftSystem.Instance.WrongMix(myIngredient, secondIngredient);
-            }
-        }
+        _rigidbody.bodyType = RigidbodyType2D.Dynamic;
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Ingredient"))
-        {
-            secondIngredient = other.GetComponent<Ingredient>();
-        }
-    }
-
+    
 }

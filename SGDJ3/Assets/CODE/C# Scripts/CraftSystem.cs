@@ -59,37 +59,19 @@ public class CraftSystem : Singleton<CraftSystem>
         else return null;// porque no hay otra pocion de 2 ingredientes buena.
     }
     
-    public void SpawnPotion(Recipe potion, Ingredient ingredient1, Ingredient ingredient2)
+    public void SpawnPotion(Recipe potion)
     {
-        Destroy(ingredient1.gameObject);
-        Destroy(ingredient2.gameObject);
-        StartCoroutine(MixIngredientsOK(ingredient2.transform.position, potion));
+        StartCoroutine(MixIngredientsOK(potion));
     }
 
-    public void WrongMix(Ingredient ingredient1, Ingredient ingredient2)
+    public void WrongMix()
     {
-        Destroy(ingredient1.gameObject);
-        Destroy(ingredient2.gameObject);
-        StartCoroutine((MixWrongIngredients(ingredient2.transform.position)));
+        StartCoroutine(MixWrongIngredients());
     }
 
 
-    private IEnumerator MixIngredientsOK(Vector3 spawnPosition, Recipe potion)
+    private IEnumerator MixIngredientsOK(Recipe potion)
     {
-        //instanciamos el poof encima de los ingredientes
-        AudioSystem.Instance.Play("Ingrediente Mezclado");
-        
-        var poof1 = Instantiate(poof_prefab, spawnPosition, Quaternion.identity);
-        Destroy(poof1, 2);
-        
-        //esperamos a que acabe la animación
-        finishAnimation = false;
-        StartCoroutine(WaitTime(0.2f));
-        while (!finishAnimation)
-        {
-            yield return null;
-        }
-
         //arrancamos la animación de la olla
         craft_anim.SetTrigger("BubbleUp");
         AudioSystem.Instance.Play("Olla Burbujeando");
@@ -114,22 +96,8 @@ public class CraftSystem : Singleton<CraftSystem>
     }
 
 
-    private IEnumerator MixWrongIngredients(Vector3 spawnPosition)
+    private IEnumerator MixWrongIngredients()
     {
-        //instanciamos el poof encima de los ingredientes
-        AudioSystem.Instance.Play("Ingrediente Mezclado");
-
-        var poof1 = Instantiate(poof_prefab, spawnPosition, Quaternion.identity);
-        Destroy(poof1, 2);
-        
-        //esperamos a que acabe la animacion
-        finishAnimation = false;
-        StartCoroutine(WaitTime(0.2f));
-        while (!finishAnimation)
-        {
-            yield return null;
-        }
-
         //arrancamos la animación de la olla
 
         AudioSystem.Instance.Play("Olla Burbujeando");
