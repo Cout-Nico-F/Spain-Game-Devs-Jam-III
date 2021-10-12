@@ -3,23 +3,25 @@ using UnityEngine;
 
 public class Pot : MonoBehaviour
 {
-    private Collider2D _collider;
     private string firstIngredient;
     private string secondIngredient;
 
 
     private void Start()
     {
-        _collider = GetComponent<Collider2D>();
         firstIngredient = String.Empty;
         secondIngredient = String.Empty;
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Ingredient"))
         {
+            // si el rigidbody del ingrediente no es dinamico
+            // significa que todavia no lo ha soltado y no debemos comprobar nada
+            if (other.GetComponent<Rigidbody2D>().bodyType != RigidbodyType2D.Dynamic) return;
+            
             // aqui debemos instanciar el efecto en la olla del chapoteo
             
             if (firstIngredient.Equals(String.Empty))
