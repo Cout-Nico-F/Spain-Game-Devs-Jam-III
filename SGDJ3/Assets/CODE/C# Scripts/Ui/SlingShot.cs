@@ -136,11 +136,24 @@ public class SlingShot : MonoBehaviour
 
     public void SetPotion(GameObject potion)
     {
+        // si ya existe una poción pero ya se esta lanzando (isMouseDown = true) destruimos la pocion nueva
+        if (_potion != null && isMouseDown)
+        {
+            Destroy(potion);
+            return;
+        }
+
+        // si ya existe una poción la destruimos y la sustituimos por la nueva
+        if (_potion != null)
+        {
+            Destroy(_potion);
+        }
+        
         _levelManager.HasPotion = true;
         _potion = potion;
         rbPotion = _potion.GetComponent<Rigidbody2D>();
         potionCollider = _potion.GetComponent<Collider2D>();
-        potionCollider.enabled = false;
+        potionCollider.enabled = false;    
     }
 
     private Vector2 GetPointPosition(float time)
