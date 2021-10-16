@@ -19,7 +19,6 @@ public class SlingShot : MonoBehaviour
     private Rigidbody2D rbPotion;
     private Collider2D potionCollider;
     private Camera _camera;
-    private float force;
     private Vector3 currentPosition;
     private Vector2 direction;
     private bool isMouseDown;
@@ -63,7 +62,6 @@ public class SlingShot : MonoBehaviour
             currentPosition = center.position - Vector3.ClampMagnitude(center.position - mousePosition, maxLength);
             SetStrips(currentPosition);
             direction = (Vector2)(center.position - currentPosition);
-            force = direction.magnitude * forceMultiplier;
 
             for (int i = 0; i < points.Length; i++)
             {
@@ -101,7 +99,7 @@ public class SlingShot : MonoBehaviour
     {
         AudioSystem.Instance.Play("Lanzar Pocion");
         rbPotion.isKinematic = false;
-        rbPotion.velocity = direction.normalized * force * 1.1f;
+        rbPotion.velocity = direction * forceMultiplier;
 
         rbPotion = null;
         potionCollider = null;
@@ -147,7 +145,7 @@ public class SlingShot : MonoBehaviour
 
     private Vector2 GetPointPosition(float time)
     {
-        Vector2 currentPosition = (Vector2)center.position + (direction.normalized * force * time) + .5f * Physics2D.gravity * (time * time);
+        Vector2 currentPosition = (Vector2)rbPotion.transform.position + (direction * forceMultiplier * time) + .5f * Physics2D.gravity * (time * time);
         return currentPosition;
     }
 
